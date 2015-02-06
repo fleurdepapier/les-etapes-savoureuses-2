@@ -7,7 +7,7 @@ appControllers.controller('ACoteCtrl', ACoteCtrl);
 
 function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource, $timeout)
 {
-
+	$rootScope.stopLoadingACote = false;
 	var placesIndex = -1;
 	
 	if( $rootScope.isOnline )
@@ -180,7 +180,7 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 
 		placesIndex ++;
 
-		if(placesIndex < $scope.listEtapesProches.length) {
+		if(placesIndex < $scope.listEtapesProches.length && $rootScope.stopLoadingACote == false ) {
 
 			var destination = $scope.listEtapesProches[placesIndex].destination;
 

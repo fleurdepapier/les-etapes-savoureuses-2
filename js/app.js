@@ -71,6 +71,7 @@ ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $l
 	$templateCache.removeAll();
 	$rootScope.themes == null;
 	$rootScope.online = navigator.onLine;
+	$rootScope.stopLoadingACote = false;
 
 	$rootScope.$storage = $localStorage.$default({ });
 
@@ -106,6 +107,7 @@ ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $l
 	$rootScope.$on('$routeChangeStart', function(next, current){	
 
 		$rootScope.isOnline = navigator.onLine ;
+		$rootScope.stopLoadingACote = true;
 
 //    	$(window).trigger("resize.doResize");
 
