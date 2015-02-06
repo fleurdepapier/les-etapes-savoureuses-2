@@ -45,10 +45,10 @@ var app = {
                 function(position){
                     lat =  position.coords.latitude;
                     long =  position.coords.longitude;
-                    angular.element($('[ng-view]')).rootScope().updateGeoPosition(lat,long);
+                    angular.element($('[ng-view]')).scope().updateGeoPosition(lat,long);
                 },
                 function(){
-                    angular.element($('[ng-view]')).rootScope().geoError();
+                    angular.element($('[ng-view]')).scope().geoError();
                 }
                 , 
                 {timeout:5000, maximumAge:0,enableHighAccuracy : true}

@@ -270,12 +270,6 @@ ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $l
 
 
 
-	$rootScope.updateGeoPosition = function(lat,long) {
-		console.log(lat,long);
-	}
-	$rootScope.geoError = function(){
-		$rootScope.geolocationError = true;
-	}
 });
 
 ngapp.filter('unsafe', function($sce) {

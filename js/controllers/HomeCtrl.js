@@ -132,4 +132,10 @@ function HomeCtrl($scope, $routeParams, $http, $rootScope, $location, $resource,
 	}
 
     
+	$rootScope.updateGeoPosition = function(lat,long) {
+		console.log(lat,long);
+	}
+	$rootScope.geoError = function(){
+		$rootScope.geolocationError = true;
+	}
 }
