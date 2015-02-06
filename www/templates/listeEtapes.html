@@ -1,0 +1,21 @@
+<section class="panel page"  >
+	<section style="background-color:{{theme.category_color}};" class="panel panel-padding background-panel" ng-class="{center: panel==0, left:panel>0}">
+		
+		<div ng-click="updateAnimRetour(true)" >
+			<ng-include src="'templates/headerRetour.html'" ></ng-include>
+		</div>
+
+		<div class="list-etapes">
+		
+			<div ng-show="contentLoading" ng-init="setupLoader()" class="loading" >
+				<div id="canvasLoaderListeEtapes" class="loader-wrapper"></div>
+			</div>
+
+			<ul class="themes-liste" >
+				<ng-include src="'templates/listeEtapes-boucle.html'" ></ng-include>
+			</ul>
+		</div>
+		
+	</section>
+</section>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html ng-app="ngapp"><!-- manifest="cache.manifest">-->
+	<head>
+		<title>Les étapes savoureuses</title>
+		<meta charset="utf-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="format-detection" content="telephone=no">
+
+		<link href="/img/startup/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" >
+        <link rel="stylesheet" type="text/css" href="css/gform.css" >
+        <link rel="stylesheet" type="text/css" href="css/style.css" >
+	    <link rel="stylesheet" type="text/css" href="css/angular-snap.css" />
+	    <link rel="stylesheet" type="text/css" href="css/sweet-alert.css" />
+
+	
+	    <script type="text/javascript" src="lib/snap.js" charset="utf-8"></script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyDZ3vxpNTEUx6_IY2LrlmkcPgOoR7n9IKI"></script>
+		<script src="lib/canvasloader.js"></script>
+			
+		<link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-touch-icon-152x152.png">
+		<link rel="icon" type="image/png" href="/img/favicons/favicon-196x196.png" sizes="196x196">
+		<link rel="icon" type="image/png" href="/img/favicons/favicon-160x160.png" sizes="160x160">
+		<link rel="icon" type="image/png" href="/img/favicons/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/img/favicons/favicon-16x16.png" sizes="16x16">
+		<link rel="icon" type="image/png" href="/img/favicons/favicon-32x32.png" sizes="32x32">
+		<meta name="msapplication-TileColor" content="#a62840">
+		<meta name="msapplication-TileImage" content="/img/favicons/mstile-144x144.png">
+
+    </head>
+    
+    <script type="text/javascript">
+    	var version = "appli-mobile";
+    </script>
+
+    <body class="{{animSide}}">
+		
+		<!--<div id="cacheCleaner"><h1>CHARGEMENT</h1></div>-->
+
+		<section ng-model="animRetour" class="view {{pageClass}}" ng-view ></section>
+
+		<!--<script type="text/javascript" src="cordova.js"></script>-->
+		
+		<script type="text/javascript" src="lib/geoPosition.js"></script>
+		<script type="text/javascript" src="lib/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="lib/angular.js"></script>
+		<script type="text/javascript" src="lib/angular-route.js"></script>
+		<script type="text/javascript" src="lib/angular-resource.js"></script>
+		<script type="text/javascript" src="lib/angular-animate.js"></script>
+		<script type="text/javascript" src="lib/angular-sanitize.js"></script>
+		<script type="text/javascript" src="lib/angular-touch.js"></script>
+		<script type="text/javascript" src="lib/angular-snap.js" charset="utf-8"></script>
+		<script type="text/javascript" src="lib/ngStorage.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="lib/ngMap.min.js" ></script>
+		<script type="text/javascript" src="lib/markerclusterer.js" ></script>
+		<script type="text/javascript" src="lib/sweet-alert.min.js"></script>
+		
+		<script type="text/javascript" src="js/app.js"></script>
+		<!--<script type="text/javascript" src="js/cachecleaner.js"></script>-->
+
+
+		<script type="text/javascript" src="js/controllers/HomeCtrl.js"></script>
+		<script type="text/javascript" src="js/controllers/SousThemesCtrl.js"></script>
+		<script type="text/javascript" src="js/controllers/NavCtrl.js"></script>
+		<script type="text/javascript" src="js/controllers/CarteCtrl.js"></script>
+		<script type="text/javascript" src="js/controllers/ACoteCtrl.js"></script>
+		<script type="text/javascript" src="js/controllers/EtapeCtrl.js"></script>
+		<script type="text/javascript" src="js/controllers/JouerCtrl.js"></script>
+		<script type="text/javascript" src="js/controllers/ListeEtapesCtrl.js"></script>
+		<script type="text/javascript" src="js/controllers/TutorielCtrl.js"></script>
+		<script type="text/javascript" src="js/controllers/AProposCtrl.js"></script>
+		<script type="text/javascript" src="js/controllers/ActualitesCtrl.js"></script>
+		<script type="text/javascript" src="js/controllers/ActualiteSingleCtrl.js"></script>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<ng-include src="'templates/menu.html'"></ng-include>
+
+<snap-content id="page-jouez" class="panel">
+
+	<section class="panel panel-padding" >
+
+		<ng-include src="'templates/header.html'"></ng-include>
+
+		<!--<div ng-show="isOnline && dataPage">-->
+		<div>
+			<div ng-click="toggleInfo()" class="bt-infos"></div>
+
+			<div ng-click="toggleInfo()" class="coverJouez" ng-class="{'close': displayInfo==false}" ></div>
+
+
+			<div class="infos" ng-show="displayInfo">
+				<span class="titre">A propos de ce jeu</span>
+				<p ng-bind-html="dataPage.a_propos"></p>
+
+				<span class="titre">À gagner</span>
+				<p ng-bind-html="dataPage.recompenses"></p>
+			</div>
+
+			<div class="en-tete-jeu">
+
+				<h1>{{dataPage.titre_jeu_1}}<br />
+				{{dataPage.titre_jeu_2}}</h1>
+
+				<img class="illu" ng-src="{{dataPage.image.sizes.illu_jeu}}" alt="{{dataPage.image.title}}" />
+
+				<p class="consigne">Répondez aux questions<br />
+				pour participer au tirage au sort</p>
+
+			</div>
+
+			<div ng-hide="formSend" ng-bind-html="form | unsafe"></div>
+
+			<div class="content">
+			
+				<div class="message-error" ng-show="message != ''">{{message}}</div>
+
+				<button ng-hide="formSend" ng-click="submitForm()" class="custom_submit">VALIDER</button>
+
+				<span ng-hide="formSend" class="bt-reglement" ng-hide="displayReglement" ng-click="toggleReglement()">Lire le règlement</span>
+
+				<div class="reglement" ng-show="displayReglement" ng-bind-html="dataPage.reglement" ></div>
+
+				<div class="clear"></div>
+			</div>
+		</div>
+
+		<!--<div ng-hide="isOnline">
+			<div class="message-error" style="text-align:center;" ng-show="message != ''">{{message}}</div>
+		</div>-->
+
+	</section>
+	
+</snap-content>
+

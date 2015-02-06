@@ -1,0 +1,2121 @@
+/*@import "icon/*.png";*/
+/* line 17, ../../../../../../Applications/Scout.app/Contents/Resources/vendor/gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../Applications/Scout.app/Contents/Resources/vendor/gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../Applications/Scout.app/Contents/Resources/vendor/gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../Applications/Scout.app/Contents/Resources/vendor/gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../Applications/Scout.app/Contents/Resources/vendor/gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../Applications/Scout.app/Contents/Resources/vendor/gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../Applications/Scout.app/Contents/Resources/vendor/gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../Applications/Scout.app/Contents/Resources/vendor/gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../Applications/Scout.app/Contents/Resources/vendor/gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/*@include all-icon-sprites;*/
+@font-face {
+  font-family: "GothamRnd-Bold";
+  src: url('../fonts/GothamRnd-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: "GothamRnd-BoldItal";
+  src: url('../fonts/GothamRnd-BoldItal.otf') format('opentype');
+}
+
+@font-face {
+  font-family: "GothamRnd-Book";
+  src: url('../fonts/GothamRnd-Book.otf') format('opentype');
+}
+
+@font-face {
+  font-family: "GothamRnd-BookItal";
+  src: url('../fonts/GothamRnd-BookItal.otf') format('opentype');
+}
+
+@font-face {
+  font-family: "GothamRnd-Light";
+  src: url('../fonts/GothamRnd-Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: "GothamRnd-Medium";
+  src: url('../fonts/GothamRnd-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: "GothamRnd-MedItal";
+  src: url('../fonts/GothamRnd-MedItal.otf') format('opentype');
+}
+
+@font-face {
+  font-family: "Sanchez-Regular";
+  src: url('../fonts/sanchez-regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: "Sanchezsemibold-ita";
+  src: url('../fonts/Sanchezsemibold-ita.otf') format('opentype');
+}
+
+/* line 29, style.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 33, style.scss */
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 40, style.scss */
+body {
+  color: #4c4c4c;
+  background-color: #f7f6f2;
+  font-family: "GothamRnd-Book";
+  /*font-size: 14px;*/
+  /*font-size: 1em;*/
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+@media (orientation: landscape) {
+  /* line 55, style.scss */
+  html.ipad.ios7, html.ipad.ios7 body {
+    height: 672px !important;
+  }
+}
+/* line 60, style.scss */
+a {
+  color: #9d2344;
+  text-decoration: none;
+}
+
+/*
+input, textarea{
+	border:none;
+	-webkit-appearance: none;
+	@include border-radius(0px);
+}
+*/
+/* line 74, style.scss */
+i {
+  display: inline-block;
+}
+
+/* line 78, style.scss */
+h1 {
+  text-align: center;
+  font-size: 18px;
+  margin: 5px 0 15px;
+  /*text-transform:uppercase;*/
+}
+
+/* line 85, style.scss */
+h2 {
+  text-align: center;
+  font-size: 14px;
+  margin: 5px 0 15px;
+}
+
+/* line 91, style.scss */
+p {
+  margin: 1em 00px;
+  overflow: hidden;
+  *zoom: 1;
+}
+
+/* line 96, style.scss */
+section.ng-scope, .page.ng-scope {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: auto;
+}
+/* line 104, style.scss */
+.ng-scope.page, .ng-scope.panel {
+  padding-top: 50px;
+}
+
+/* line 112, style.scss */
+.bande {
+  width: 100%;
+  text-align: center;
+  background-color: #FFF;
+  height: 50px;
+  font-size: 14px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 999;
+  border-bottom: 1px solid #cccccc;
+  line-height: 50px;
+  vertical-align: middle;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 10px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 10px;
+}
+/* line 126, style.scss */
+.bande .btn-menu {
+  display: block;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 22px;
+  height: 19px;
+  background-image: url(../img/bt-menu.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+/* line 137, style.scss */
+.bande .ctn-btn-retour {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/* line 141, style.scss */
+.bande .ctn-btn-retour .title {
+  color: #4c4c4c !important;
+}
+/* line 145, style.scss */
+.bande .btn-retour {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 22px;
+  width: 9px;
+  height: 11px;
+  background-image: url(../img/bt-retour.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+/* line 156, style.scss */
+.bande .title {
+  font-family: "GothamRnd-Light";
+  font-size: 15px;
+  text-transform: uppercase;
+  width: 80%;
+  display: inline-block;
+  line-height: 17px;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* line 168, style.scss */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0px;
+  line-height: 40px;
+  color: #FFF;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #f7f6f2;
+}
+
+/* line 178, style.scss */
+.view {
+  bottom: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+}
+
+/* line 189, style.scss */
+.nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background-color: #f7f6f2;
+  /*overflow: hidden;*/
+  overflow: hidden;
+  *zoom: 1;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+/* line 199, style.scss */
+.nav span {
+  display: inline-block;
+  width: 32%;
+  height: 60px;
+}
+/* line 204, style.scss */
+.nav span.active {
+  border-top: 3px solid #9d2344;
+  color:#9d2344;
+}
+.nav span p{
+  margin:0;
+  padding:0;
+  display: inline-block;
+  line-height: 17px;
+  vertical-align: middle;
+}
+
+/* line 207, style.scss */
+.nav i {
+  margin-top: 15px;
+}
+
+/* line 212, style.scss */
+.page-container {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 1;
+}
+
+/* line 224, style.scss */
+.panel {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: 100%;
+  overflow-x: hidden;
+  padding-top: 50px;
+  /*overflow-y:scroll;*/
+  -webkit-overflow-scrolling: touch;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+/* line 235, style.scss */
+.page.ng-leave {
+  z-index: 9999;
+}
+
+/* line 236, style.scss */
+.page.ng-enter {
+  z-index: 8888;
+}
+
+/* line 239, style.scss */
+.ng-enter.first-build {
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  animation: none !important;
+}
+
+/* line 244, style.scss */
+.ng-leave.first-build {
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  animation: none !important;
+}
+
+/* line 251, style.scss */
+.ng-enter.tutoriel {
+  -webkit-animation: fadeIn 0.1s both ease-in !important;
+  -moz-animation: fadeIn 0.1s both ease-in !important;
+  animation: fadeIn 0.1s both ease-in !important;
+}
+
+/* line 258, style.scss */
+.ng-leave.tutoriel {
+  -webkit-animation: fadeOut 0.3s both ease-in !important;
+  -moz-animation: fadeOut 0.3s both ease-in !important;
+  animation: fadeOut 0.3s both ease-in !important;
+}
+
+/* slideFromRight*/
+@keyframes slideFromRight {
+  /* line 267, style.scss */
+  from {
+    transform: translateX(-100%);
+  }
+
+  /* line 268, style.scss */
+  to {
+    transform: translateX(0);
+  }
+}
+
+@-moz-keyframes slideFromRight {
+  /* line 271, style.scss */
+  from {
+    -moz-transform: translateX(-100%);
+  }
+
+  /* line 272, style.scss */
+  to {
+    -moz-transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes slideFromRight {
+  /* line 275, style.scss */
+  from {
+    -webkit-transform: translateX(-100%);
+  }
+
+  /* line 276, style.scss */
+  to {
+    -webkit-transform: translateX(0);
+  }
+}
+
+/* slideFromLeft*/
+@keyframes slideFromLeft {
+  /* line 281, style.scss */
+  from {
+    transform: translateX(100%);
+  }
+
+  /* line 282, style.scss */
+  to {
+    transform: translateX(0);
+  }
+}
+
+@-moz-keyframes slideFromLeft {
+  /* line 285, style.scss */
+  from {
+    -moz-transform: translateX(100%);
+  }
+
+  /* line 286, style.scss */
+  to {
+    -moz-transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes slideFromLeft {
+  /* line 289, style.scss */
+  from {
+    -webkit-transform: translateX(100%);
+  }
+
+  /* line 290, style.scss */
+  to {
+    -webkit-transform: translateX(0);
+  }
+}
+
+/* slideToLeft */
+@keyframes slideToLeft {
+  /* line 295, style.scss */
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@-moz-keyframes slideToLeft {
+  /* line 298, style.scss */
+  to {
+    -moz-transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes slideToLeft {
+  /* line 301, style.scss */
+  to {
+    -webkit-transform: translateX(-100%);
+  }
+}
+
+/* slideToRight */
+@keyframes slideToRight {
+  /* line 307, style.scss */
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@-moz-keyframes slideToRight {
+  /* line 310, style.scss */
+  to {
+    -moz-transform: translateX(100%);
+  }
+}
+
+@-webkit-keyframes slideToRight {
+  /* line 313, style.scss */
+  to {
+    -webkit-transform: translateX(100%);
+  }
+}
+
+/* fadeIn */
+@-webkit-keyframes fadeIn {
+  /* line 318, style.scss */
+  from {
+    opacity: 0;
+  }
+
+  /* line 319, style.scss */
+  to {
+    opacity: 1;
+  }
+}
+
+/* fadeOut */
+@-webkit-keyframes fadeOut {
+  /* line 324, style.scss */
+  from {
+    opacity: 1;
+  }
+
+  /* line 325, style.scss */
+  to {
+    opacity: 0;
+  }
+}
+
+
+
+.fadeAnimation .view.ng-leave {
+  -webkit-animation: fadeOut 0.2s 0.3s both ease-in;
+  -moz-animation: fadeOut 0.2s 0.3s both ease-in;
+  animation: fadeOut 0.2s 0.3s both ease-in;
+}
+
+.fadeAnimation .view.ng-enter {
+  -webkit-animation: fadeIn 0.2s  0.3s both ease-in;
+  -moz-animation: fadeIn 0.2s  0.3s both ease-in;
+  animation: fadeIn 0.2s  0.3s both ease-in;
+}
+
+body.left .view.ng-leave {
+  -webkit-animation: slideToLeft 0.3s both ease-in;
+  -moz-animation: slideToLeft 0.3s both ease-in;
+  animation: slideToLeft 0.3s both ease-in;
+}
+
+body.left .view.ng-enter {
+  -webkit-animation: slideFromLeft 0.3s both ease-in;
+  -moz-animation: slideFromLeft 0.3s both ease-in;
+  animation: slideFromLeft 0.3s both ease-in;
+}
+
+body.right .view.ng-leave {
+  -webkit-animation: slideToRight 0.3s both ease-in;
+  -moz-animation: slideToRight 0.3s both ease-in;
+  animation: slideToRight 0.3s both ease-in;
+}
+
+/* line 348, style.scss */
+body.right .view.ng-enter {
+  -webkit-animation: slideFromRight 0.3s both ease-in;
+  -moz-animation: slideFromRight 0.3s both ease-in;
+  animation: slideFromRight 0.3s both ease-in;
+}
+
+
+/* sous page animations */
+/* line 411, style.scss */
+.animate-switch-container {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+/* line 419, style.scss */
+.animate-switch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+}
+
+/*
+.page.page-under-header{
+	padding-top: 75px;
+}*/
+/* Anim leave block theme */
+/* line 434, style.scss */
+.animate-switch.block-themes.ng-enter {
+  -webkit-animation: slideFromRight 0.3s both ease-in;
+  -moz-animation: slideFromRight 0.3s both ease-in;
+  animation: slideFromRight 0.3s both ease-in;
+}
+
+/* Anim enter block theme */
+/* line 440, style.scss */
+.animate-switch.block-themes.ng-leave {
+  -webkit-animation: slideToLeft 0.3s both ease-in;
+  -moz-animation: slideToLeft 0.3s both ease-in;
+  animation: slideToLeft 0.3s both ease-in;
+}
+
+/* Anim leave block acotedemoi */
+/* line 447, style.scss */
+.animate-switch.block-acotedemoi.ng-enter {
+  -webkit-animation: slideFromLeft 0.3s both ease-in;
+  -moz-animation: slideFromLeft 0.3s both ease-in;
+  animation: slideFromLeft 0.3s both ease-in;
+}
+
+/* Anim enter block acotedemoi */
+/* line 453, style.scss */
+.animate-switch.block-acotedemoi.ng-leave {
+  -webkit-animation: slideToRight 0.3s both ease-in;
+  -moz-animation: slideToRight 0.3s both ease-in;
+  animation: slideToRight 0.3s both ease-in;
+}
+
+/* Anim leave block carte si on va vers acotedemoi */
+/* line 461, style.scss */
+.blockactu-acotedemoi .animate-switch.block-carte.ng-leave {
+  -webkit-animation: slideToLeft 0.3s both ease-in;
+  -moz-animation: slideToLeft 0.3s both ease-in;
+  animation: slideToLeft 0.3s both ease-in;
+}
+
+/* Anim enter block carte si on va vers acotedemoi */
+/* line 467, style.scss */
+.blockactu-carte.blockprevious-acotedemoi .animate-switch.block-carte.ng-enter {
+  -webkit-animation: slideFromRight 0.3s both ease-in;
+  -moz-animation: slideFromRight 0.3s both ease-in;
+  animation: slideFromRight 0.3s both ease-in;
+}
+
+/* Anim leave block carte si on va vers theme */
+/* line 475, style.scss */
+.blockactu-themes .animate-switch.block-carte.ng-leave {
+  -webkit-animation: slideToRight 0.3s both ease-in;
+  -moz-animation: slideToRight 0.3s both ease-in;
+  animation: slideToRight 0.3s both ease-in;
+}
+
+/* Anim enter block carte si on va vers theme */
+/* line 481, style.scss */
+.blockactu-carte.blockprevious-themes .animate-switch.block-carte.ng-enter {
+  -webkit-animation: slideFromLeft 0.3s both ease-in;
+  -moz-animation: slideFromLeft 0.3s both ease-in;
+  animation: slideFromLeft 0.3s both ease-in;
+}
+
+/***** MENU *****/
+/* line 491, style.scss */
+.menu-container {
+  /*
+  display:block;
+  width:100%;
+  height:auto;
+  text-align:center;
+  */
+}
+/* line 498, style.scss */
+.menu-container span.logo-menu {
+  display: inline-block;
+  width: 100px;
+  height: 105px;
+  margin-top: 50px;
+  background-image: url(../img/logo-menu.png);
+  background-repeat: no-repeat;
+  margin-bottom: 30px;
+}
+/* line 508, style.scss */
+.menu-container ul {
+  width: 100%;
+  border-top: 1px solid #dadada;
+  border-bottom: 1px solid #ffffff;
+  text-align: left;
+  overflow: hidden;
+}
+/* line 514, style.scss */
+.menu-container ul li {
+  height: 71px;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #dadada;
+  width: 100%;
+  line-height: 66px;
+  position: relative;
+}
+/* line 521, style.scss */
+.menu-container ul li :before {
+  content: '';
+  width: 45px;
+  height: 45px;
+  display: block;
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  background-image: url(../img/ico-etapes.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.menu-container ul li.jouer :before{
+  background-image: url(../img/icon-jouez@2x.png);
+  background-size: 30px auto;
+  background-position: 10px 4px;
+
+}
+
+.menu-container ul li.about :before{
+  background-image: url(../img/jouez-infos.png);
+  background-size: 24px auto;
+  background-position: 11px 8px;
+
+}
+
+.menu-container ul li.actualites :before{
+  background-image: url(../img/icon-journal.png);
+  background-size: 28px auto;
+ /* background-position: 11px 8px;*/
+
+}
+
+.menu-container ul li.appli :before{
+  background-image: url(../img/icon-mobile@2x.png);
+  background-size: auto 30px;
+  background-position: 15px 6px;
+
+}
+
+
+/* line 533, style.scss */
+.menu-container ul li span {
+  width: 100%;
+  vertical-align: middle;
+  display: inline-block;
+  padding-left: 60px;
+  line-height: normal;
+}
+/* line 541, style.scss */
+.menu-container ul li.active {
+  background-color: #deddd9;
+  -moz-box-shadow: inset 0px -7px 10px -4px #bfbebb;
+  -webkit-box-shadow: inset 0px -7px 10px -4px #bfbebb;
+  -o-box-shadow: inset 0px -7px 10px -4px #bfbebb;
+  box-shadow: inset 0px -7px 10px -4px #bfbebb;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color=#bfbebb, Direction=90, Strength=10);
+}
+/* line 549, style.scss */
+.menu-container ul li.parent.open {
+  background-color: #deddd9;
+}
+/* line 552, style.scss */
+.menu-container ul ul.sousmenu {
+  max-height: 0px;
+  width: 100%;
+  overflow: hidden;
+  border-top: none;
+  -webkit-transition-property: max-height;
+  -moz-transition-property: max-height;
+  -o-transition-property: max-height;
+  transition-property: max-height;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -moz-box-shadow: inset 0px -7px 10px -4px #333333;
+  -webkit-box-shadow: inset 0px -7px 10px -4px #333333;
+  -o-box-shadow: inset 0px -7px 10px -4px #333333;
+  box-shadow: inset 0px -7px 10px -4px #333333;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color=#333, Direction=90, Strength=10);
+  -moz-box-shadow: inset 0px 7px 10px -4px #333333;
+  -webkit-box-shadow: inset 0px 7px 10px -4px #333333;
+  -o-box-shadow: inset 0px 7px 10px -4px #333333;
+  box-shadow: inset 0px 7px 10px -4px #333333;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color=#333, Direction=180, Strength=10);
+}
+/* line 572, style.scss */
+.menu-container ul ul.sousmenu li {
+  background-color: #555 ;
+  border-bottom: 1px solid #484848;
+  border-top: none;
+  color: white;
+  height: 50px;
+  line-height: 45px;
+  cursor: pointer;
+}
+.menu-container ul ul.sousmenu li.active{
+  background-color: #444;
+  -moz-box-shadow: inset 0px -7px 10px -4px #333;
+  -webkit-box-shadow: inset 0px -7px 10px -4px #333;
+  -o-box-shadow: inset 0px -7px 10px -4px #333;
+  box-shadow: inset 0px -7px 10px -4px #333;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color=#333, Direction=90, Strength=10);
+}
+
+.menu-container ul ul.sousmenu li span{
+  padding-left: 26px;
+  margin-top: 6px;
+}
+/* line 579, style.scss */
+.menu-container ul ul.sousmenu li :before {
+  display: none;
+}
+/* line 583, style.scss */
+.menu-container ul ul.sousmenu.activate {
+  max-height: 500px;
+}
+
+/** TUTO **/
+/* line 598, style.scss */
+.ng-enter.tutoriel-page {
+  -webkit-animation: fadeIn 0.5s both ease-in !important;
+  -moz-animation: fadeIn 0.5s both ease-in !important;
+  animation: fadeIn 0.5s both ease-in !important;
+}
+
+/* line 605, style.scss */
+.ng-leave.tutoriel-page {
+  -webkit-animation: fadeOut 0.5s both ease-in !important;
+  -moz-animation: fadeOut 0.5s both ease-in !important;
+  animation: fadeOut 0.5s both ease-in !important;
+}
+
+/* line 611, style.scss */
+.tutorial-container {
+  background-image: url(../img/photo-bg@2x.png);
+  background-color: #9d2344;
+  background-size: cover;
+  background-position: center center;
+  text-align: center;
+}
+
+/* line 620, style.scss */
+.tutorial-container .panel {
+  background-color: rgba(157, 35, 68, 0.9);
+}
+
+/* line 624, style.scss */
+.tutorial-container .next-slide-btn {
+  position: absolute;
+  bottom: 60px;
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+/* line 632, style.scss */
+.tutorial-container .next-slide-btn span {
+  font-family: "GothamRnd-Bold", sans-serif;
+  font-size: 15px;
+  color: #9d2344;
+  background-color: #f7f6f2;
+  padding: 10px 13px 7px 13px;
+  -webkit-border-radius: 3px 3px;
+  -moz-border-radius: 3px / 3px;
+  border-radius: 3px / 3px;
+}
+
+/* line 642, style.scss */
+.tutorial-container .next-slide-btn.hide {
+  display: none;
+}
+
+/* line 646, style.scss */
+.tutorial-container .slider-nav {
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
+}
+
+/* line 651, style.scss */
+.tutorial-container .slider-nav li {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  opacity: 0.4;
+  -webkit-border-radius: 4px 4px;
+  -moz-border-radius: 4px / 4px;
+  border-radius: 4px / 4px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+/* line 661, style.scss */
+.tutorial-container .slider-nav li.active {
+  opacity: 1;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+/* line 667, style.scss */
+.block-slide {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-family: "GothamRnd-Bold", sans-serif;
+  color: white;
+  font-size: 25px;
+  text-align: center;
+  padding-top: 5%;
+  opacity: 1;
+  display:block!important;
+}
+
+.block-slide h1 {
+  font-family: "GothamRnd-Medium", sans-serif;
+  font-size: 17px;
+  line-height: 18px;
+  margin-bottom: 15px;
+  font-weight: normal;
+  text-transform: uppercase;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.slide_image {
+  display: block;
+  text-align: center;
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: auto 100%;
+}
+
+.block-slide .texte{
+  font-size: 12px !important;
+  line-height: 17px;
+  font-family: "sanchez-regular" !important;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.block-slide .texte p{
+  max-width: 400px;
+  margin: auto;
+}
+
+
+.block-slide.ng-hide{
+  opacity: 0;
+}
+
+.swipe-left .block-slide.ng-hide-add{
+  -webkit-animation: slideToLeft 0.3s both ease-in;
+  -moz-animation: slideToLeft 0.3s both ease-in;
+  animation: slideToLeft 0.3s both ease-in;
+  opacity: 1 !important;
+}
+
+.swipe-left .block-slide.ng-hide-remove{
+  -webkit-animation: slideFromLeft 0.3s both ease-in;
+  -moz-animation: slideFromLeft 0.3s both ease-in;
+  animation: slideFromLeft 0.3s both ease-in;
+  opacity: 1 !important;
+}
+
+
+.swipe-right .block-slide.ng-hide-add{
+  -webkit-animation: slideToRight 0.3s both ease-in;
+  -moz-animation: slideToRight 0.3s both ease-in;
+  animation: slideToRight 0.3s both ease-in;
+  opacity: 1 !important;
+}
+
+.swipe-right .block-slide.ng-hide-remove{
+  -webkit-animation: slideFromRight 0.3s both ease-in;
+  -moz-animation: slideFromRight 0.3s both ease-in;
+  animation: slideFromRight 0.3s both ease-in;
+  opacity: 1 !important;
+}
+
+
+/* line 679, style.scss */
+.tutorial-container .animate-switch {
+  background: none;
+}
+
+/* line 683, style.scss 
+.swipe-left .animate-switch.block-slide.ng-enter {
+  -webkit-animation: slideFromLeft 0.3s both ease-in;
+  -moz-animation: slideFromLeft 0.3s both ease-in;
+  animation: slideFromLeft 0.3s both ease-in;
+}*/
+
+/* line 688, style.scss 
+.swipe-left .animate-switch.block-slide.ng-leave {
+  -webkit-animation: slideToLeft 0.3s both ease-in;
+  -moz-animation: slideToLeft 0.3s both ease-in;
+  animation: slideToLeft 0.3s both ease-in;
+}*/
+
+/* line 694, style.scss 
+.swipe-right .animate-switch.block-slide.ng-enter {
+  -webkit-animation: slideFromRight 0.3s both ease-in;
+  -moz-animation: slideFromRight 0.3s both ease-in;
+  animation: slideFromRight 0.3s both ease-in;
+}*/
+
+/* line 699, style.scss 
+.swipe-right .animate-switch.block-slide.ng-leave {
+  -webkit-animation: slideToRight 0.3s both ease-in;
+  -moz-animation: slideToRight 0.3s both ease-in;
+  animation: slideToRight 0.3s both ease-in;
+}*/
+
+/** PAGE HOME **/
+/* line 709, style.scss */
+.page-home .animate-switch, .page-home .page-container {
+  background-color: #7e1c36;
+}
+
+/* line 715, style.scss */
+ul.themes-liste {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 60px;
+}
+/* line 719, style.scss */
+ul.themes-liste a {
+  display: block !important;
+  position: relative !important;
+  width: 100%;
+  height: 70px;
+}
+/* line 725, style.scss */
+ul.themes-liste li {
+  width: 100%;
+  background-color: #9d2344;
+  display: block;
+  color: white;
+  line-height: 70px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  padding-right: 15px;
+}
+
+ul.themes-liste.acote-liste li{
+  padding-right: 80px;
+}
+ul.themes-liste.acote-liste{
+  padding-bottom: 100px !important;
+}
+
+ul.themes-liste.acote-liste li p.ng-binding{
+  margin-top: 0px;
+}
+
+p.error{
+  color: white;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+p.window-connect.error{
+  position: fixed;
+  top: 0px;
+  left: 10%;
+  display: block;
+  width: 80%;
+  background-color: white;
+  z-index: 10000000000;
+  color: #333;
+  line-height: 20px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding: 20px;
+}
+
+
+ul.themes-liste li p.type {
+  font-family: "GothamRnd-Medium", sans-serif;
+  clear: both;
+  margin-bottom: 3px;
+  text-transform: none;
+  font-size: 10px;
+  margin-top: 10px !important;
+}
+/* line 737, style.scss */
+ul.themes-liste li span.etape-image {
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+/* line 748, style.scss */
+ul.themes-liste li span.icon {
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 80px;
+  height: 80%;
+  margin-top: 7px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+/* line 762, style.scss */
+ul.themes-liste li span.titre {
+  margin-left: 85px;
+  color: #e8e8d9;
+  text-transform: uppercase;
+  display: inline-block;
+  line-height: 16px;
+  font-family: "GothamRnd-Book", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  width: 70%;
+  vertical-align: middle;
+}
+/* line 773, style.scss */
+ul.themes-liste li span.titre.titre-avec-image {
+  margin-left: 120px;
+  width: auto;
+}
+/* line 778, style.scss */
+ul.themes-liste li span.color {
+  display: block;
+  position: absolute;
+  top: -1px;
+  right: 0px;
+  width: 20px;
+  height: 100%;
+  background-color: #f7f6f2;
+  -webkit-transition-property: width;
+  -moz-transition-property: width;
+  -o-transition-property: width;
+  transition-property: width;
+  -webkit-transition-duration: 0.1s;
+  -moz-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+}
+/* line 789, style.scss */
+ul.themes-liste li span.color:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  margin-top: -6px;
+  width: 7px;
+  height: 12px;
+  background-image: url(../img/fleche.png);
+}
+/* line 800, style.scss */
+ul.themes-liste li span.nb-etapes {
+  display: block;
+  width: 20%;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  opacity: 0.8;
+  color: #e8e8d9;
+  text-align: center;
+  line-height: 12px;
+}
+/* line 811, style.scss */
+ul.themes-liste li span.nb-etapes span.chiffre {
+  font-size: 23px;
+  display: inline-block;
+  width: 100%;
+  padding-top: 25px;
+}
+/* line 817, style.scss */
+ul.themes-liste li span.nb-etapes span.label {
+  text-transform: uppercase;
+  font-size: 9px;
+  display: inline-block;
+  width: 100%;
+}
+/* line 825, style.scss */
+ul.themes-liste li:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+}
+/* line 838, style.scss */
+ul.themes-liste li:hover span.color {
+  width: 40px;
+}
+
+/* line 845, style.scss */
+.list-sous-themes ul {
+  margin-bottom: 0px !important;
+}
+
+/* line 851, style.scss */
+.list-etapes {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+/* line 855, style.scss */
+.list-etapes ul {
+  margin-bottom: 0px !important;
+}
+
+
+.ficheEtape .content{
+  width: 90%;
+  margin:auto;
+  text-align: left;
+  color: #000;
+  font-family: "Sanchez-Regular", "Times New Roman";
+  font-size: 14px;
+  line-height: 20px;
+  padding-bottom: 100px;
+}
+
+.ficheEtape .main-image{
+  display: block;
+  width: 100%;
+  height: 280px;
+  background-size: cover;
+  background-position: center center;
+  text-align: center;
+  position: relative;
+  z-index: 0;
+}
+
+.ficheEtape .main-image img {
+  height: 280px;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.ficheEtape .little-description{
+  display: block;
+  background-color: #7BCFDB;
+  color: white;
+  padding: 25px;
+  font-size: 16px;
+  text-align: center;
+  margin-top: -60px;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  font-family: "GothamRnd-Medium", sans-serif;
+}
+
+.ficheEtape .content h2 {
+  color: #7BCFDB;
+  font-family: "GothamRnd-Bold", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: normal;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding: 0;
+  text-align: left;
+}
+
+.ficheEtape .content h3 {
+  font-family: "GothamRnd-Bold", sans-serif;
+  font-size: 14px;
+  color: #7BCFDB;
+  font-weight: normal;
+  padding: 0px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+
+.ficheEtape .horaires {
+  margin-top: 30px;
+  border-top: 1px solid #dadada;
+  width: 100%;
+}
+
+.ficheEtape .image-manquante {
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-color: #f7f6f2;
+  border-bottom: 1px solid white;
+  background-image: url(../img/imageManquante-grande.jpg);
+}
+
+.ficheEtape img.distinction-logo {
+  display: inline-block;
+  height: 75px;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.ficheEtape .website {
+  display: inline-block;
+  /* background-color: #f7f6f2; */
+  color: #000;
+  padding: 10px 0px;
+  font-family: "Sanchez-Regular", "Times New Roman";
+  font-size: 14px;
+  width: 100%;
+  line-height: 31px;
+  padding-top: 0px;
+}
+
+.ficheEtape .tel, .fichEtape .mail{
+  display: block;
+  clear: both;
+  margin-top: 6px;
+  margin-bottom: 5px;
+}
+
+.ficheEtape a {
+  color: #7BCFDB !important;
+  padding-top: 0px;
+}
+
+.ficheEtape .content p{
+  margin:0px;
+}
+
+.ficheEtape .facebook-link, .ficheEtape .twitter-link{
+  float: right;
+}
+
+.ficheEtape .facebook-bt{
+  display: block;
+  width: 31px;
+  height: 31px;
+  background-image: url(../img/bt-facebook.png);
+}
+
+.ficheEtape .twitter-bt{
+  display: block;
+  width: 31px;
+  height: 31px;
+  background-image: url(../img/bt-twitter.png);
+  margin-left: 10px;
+}
+
+.ficheEtape h4 {
+  font-family: 'Sanchezsemibold-ita';
+  font-size: 14px;
+  color: #000000;
+  margin-bottom: 5px;
+  font-weight: lighter;
+  margin-top: 22px;
+}
+
+.ficheEtape .langues-bts img {
+  margin-right: 10px;
+}
+
+.ficheEtape .complementAccueil{
+  display: inline-block;
+  color:#7BCFDB;
+  background-color: white;
+  padding: 25px;
+  padding-top: 30px;
+  font-family: "GothamRnd-Medium", sans-serif;
+  font-size: 16px;
+  text-align: center; 
+  margin-top: 24px;
+  width: 100%;
+  position: relative;
+}
+
+.ficheEtape .complementAccueil:before{
+  content : "";
+  width: 48px;
+  height: 48px;
+  display: block;
+  background-image: url(../img/picto-etoile.png);
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  margin-left: -24px;
+}
+
+.ficheEtape .complementAccueil.itineraire:before{
+  background-image: url(../img/picto-itineraire.png);
+}
+
+.ficheEtape .contact-titre {
+  margin: 0px !important;
+  margin-bottom: 10px !important;
+  position: relative;
+  padding-left: 47px !important;
+  margin-top: 40px !important;
+}
+
+.ficheEtape .contact-titre:before{
+  content: "";
+  width: 41px;
+  height: 48px;
+  position: absolute;
+  top: -12px;
+  left: -4px;
+  background-image: url(../img/picto-contact.png);
+  background-repeat: no-repeat;
+}
+
+.ficheEtape .horaire-titre {
+position: relative;
+padding-left: 37px !important;
+margin-bottom: 15px !important;
+}
+.ficheEtape .horaire-titre:before{
+  content: "";
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  top: -10px;
+  left: -6px;
+  background-image: url(../img/picto-horaires.png);
+  background-repeat: no-repeat;
+}
+
+.ficheEtape .visite-titre {
+position: relative;
+padding-left: 35px !important;
+margin-bottom: 15px !important;
+}
+.ficheEtape .visite-titre:before{
+  content: "";
+  width: 35px;
+  height: 37px;
+  position: absolute;
+  top: -10px;
+  left: -6px;
+  background-image: url(../img/picto-visite.png);
+  background-repeat: no-repeat;
+}
+
+.ficheEtape .tarif-titre {
+position: relative;
+padding-left: 35px !important;
+margin-bottom: 15px !important;
+}
+
+.ficheEtape .tarif-titre:before{
+  content: "";
+  width: 35px;
+  height: 37px;
+  position: absolute;
+  top: -10px;
+  left: -6px;
+  background-image: url(../img/picto-tarif.png);
+  background-repeat: no-repeat;
+}
+
+.ficheEtape .langue-titre {
+position: relative;
+padding-left: 45px !important;
+margin-bottom: 15px !important;
+}
+.ficheEtape .langue-titre:before{
+  content: "";
+  width: 44px;
+  height: 41px;
+  position: absolute;
+  top: -10px;
+  left: -6px;
+  background-image: url(../img/picto-langue.png);
+  background-repeat: no-repeat;
+}
+
+
+
+#page-jouez{
+  background-color: #f7f6f2;
+  text-align: left;
+  padding-bottom: 50px;
+}
+
+#page-jouez .gform_body{
+  padding:30px;
+  padding-top: 0px;
+}
+
+#page-jouez .gform_body label.gfield_label{
+  font-family: "GothamRnd-Bold", sans-serif;
+  color: #333;
+  font-size: 14px;
+  display: block;
+  margin-top: 30px;
+  font-weight: normal;
+}
+
+#page-jouez .gform_body li.second_step {
+  margin-top: 15px;
+}
+
+#page-jouez .gform_body li.second_step label.gfield_label{
+  margin-bottom: 3px;
+  margin-top: 20px;
+}
+
+#page-jouez .ginput_container ul li{
+  padding-left: 2px !important;
+  margin: 0 0 5px 0;
+}
+#page-jouez .ginput_container ul li input[type=radio]{
+  margin-top: 4px;
+}
+#page-jouez .ginput_container ul li label{
+  font-family: "Sanchez", "Times New Roman";
+  font-size: 14px;
+  color: #333;
+  font-weight: normal !important;
+}
+
+#page-jouez .ginput_container input[type='text'], input[type='email'] {
+  width: 100%;
+  height: 33px;
+  background-color: white;
+  border: 1px solid #b2b2b2;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 12px;
+  font-family: "Sanchez", "Times New Roman";
+}
+
+#page-jouez .field_error input[type='text']{
+  border: 2px solid #a62840;
+}
+
+#page-jouez .separator_steps{
+  display: block;
+  border-top: 1px solid #DDD;
+  margin-top: 30px !important;
+  padding-top: 30px !important;
+}
+
+#page-jouez .gform_wrapper .gform_footer{
+  text-align: center;
+}
+
+#page-jouez .gform_footer input[type='submit'] {
+  display: none;
+}
+
+#page-jouez .custom_submit{
+  background-color: #9d2344;
+  border: none;
+  color: white;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: "GothamRnd-Medium", sans-serif;
+  font-size: 14px !important;
+  text-transform: uppercase;
+  border: 1px solid #9d2344;
+  padding: 8px 20px 6px 20px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+}
+#page-jouez .custom_submit:hover{
+  background-color: transparent;
+  color: #9d2344;
+}
+
+.bt-infos{
+  position: fixed;
+  top: 14px;
+  right: 20px;
+  width: 22px;
+  height: 22px;
+  background-image: url(../img/jouez-infos.png);
+  background-size: 22px 22px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.bt-infos.bt-filtre{
+  background-image: url(../img/icon-filtre.png);
+}
+
+.page-acotedemoi .cover, .coverJouez{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.4;
+  display: block;
+  -webkit-transition: opacity ease-out 0.5s;
+  -moz-transition: opacity ease-out 0.5s;
+  -o-transition: opacity ease-out 0.5s;
+  transition: opacity ease-out 0.5s;
+  z-index: 1;
+}
+.page-acotedemoi .cover.close, .coverJouez.close{
+  top: -100%;
+  opacity: 0;
+}
+
+
+#page-jouez .infos, .page-acotedemoi .infos{
+  width: 100%;
+  padding: 30px;
+  background-color: #9d2344;
+  color: white;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 10px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 10px;
+  position: absolute;
+  top: 50px !important;
+  left: 0px;
+  z-index: 10;
+  line-height: 16px;
+  padding-bottom: 50px;
+  overflow: hidden;
+  -webkit-transition: all ease-out 0.5s;
+  -moz-transition: all ease-out 0.5s;
+  -o-transition: all ease-out 0.5s;
+  transition: all ease-out 0.5s;
+  display: block !important;
+}
+
+.page-acotedemoi .infos{
+  position: fixed;
+  background-color: #f7f6f2;
+  color: #333;
+  padding-bottom: 30px;
+  top: 50px !important;
+}
+
+
+#page-jouez .infos.ng-hide, .page-acotedemoi .infos.ng-hide{
+  top: -100% !important;
+}
+
+
+
+#page-jouez .infos .titre, .page-acotedemoi .infos .titre{
+  display: block;
+  font-size: 14px;
+  font-family: "GothamRnd-Medium", sans-serif;
+  margin-bottom: 4px;
+  margin-top: 15px;
+}
+
+#page-jouez .infos p{
+  margin: 0px;
+  width: 100%;
+  height: auto;
+  color: white;
+  font-family: "Sanchez", "Times New Roman";
+  text-align: left;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.page-acotedemoi .infos p{
+  margin: 0px;
+  width: 100%;
+  height: auto;
+  color: #333;
+  font-family: "Sanchez", "Times New Roman";
+  text-align: left;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.page-acotedemoi .infos ul{
+  list-style-type: none;
+  text-align: left;
+  margin: 0px;
+  padding: 0px;
+  margin-top: 10px;
+}
+
+.page-acotedemoi .infos ul li{
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 10px;
+  font-family: "Sanchez", "Times New Roman";
+  color: #333;
+  font-size: 13px;
+}
+
+.page-acotedemoi .infos ul li label{
+  display: inline-block;
+  margin-left: 5px;
+}
+
+
+#page-jouez .en-tete-jeu{
+  background-color: #9d2344;
+  margin-top: -20px;
+}
+
+#page-jouez .en-tete-jeu h1{
+  font-family: "GothamRnd-Medium";
+  line-height: 20px;
+  font-size: 17px;
+  color: white;
+  padding-top: 60px;
+  padding-bottom: 20px;
+}
+
+#page-jouez .en-tete-jeu img{
+  width: 100%;
+}
+
+
+#page-jouez .content{
+  padding: 30px;
+  text-align: center;
+}
+
+#page-jouez .en-tete-jeu p.consigne{
+  text-align: center;
+  color: white;
+  padding-bottom: 30px !important;
+  padding-top: 10px;
+  font-family: "GothamRnd-Light";
+}
+
+#page-jouez .bt-reglement{
+  text-align: center;
+  display: block;
+  font-family: "GothamRnd-Book", sans-serif;
+  font-size: 12px;
+  text-decoration: underline;
+  margin-bottom: 50px;
+  color: #a62840;
+  cursor: pointer;
+
+}
+
+#page-jouez .reglement{
+  font-family: "sanchez-regular";
+  font-size: 12px;
+  line-height: 15px;
+  text-align: justify;
+}
+
+#page-jouez .message-error {
+  text-align: left;
+  font-family: "Sanchez", "Times New Roman";
+  font-size: 14px;
+  background-color: #9d2344;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 20px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+
+.loading div.loader-wrapper{
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 40%;
+}
+
+
+/***** CACHE CLEANER DIV ****/
+/* line 1111, style.scss */
+#cacheCleaner {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(../img/photo-bg@2x.png);
+  background-size: cover;
+  background-position: center center;
+  z-index: 999999999999;
+}
+#cacheCleaner:after{
+  content:'';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center center;
+  background-color: rgba(157,35,68,0.9);
+}
+/* line 1122, style.scss */
+#cacheCleaner h1 {
+  font-size: 20px;
+  color: white;
+  font-family: "GothamRnd-Light";
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  margin-top: -20px;
+  left: 0;
+  text-align: center;
+  z-index: 9999999999999999;
+}
+/* line 1134, style.scss */
+#cacheCleaner.hide {
+  display: none;
+}
+
+.locate{
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 40px;
+  bottom: 75px;
+  right: 15px;
+  background-image: url(../img/locate-button.png);
+  background-size: 70% 70%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #FFF;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0px 0px 7px 0px #cfcfcf;
+  -webkit-box-shadow: 0px 0px 7px 0px #cfcfcf;
+  -o-box-shadow: 0px 0px 7px 0px #cfcfcf;
+  box-shadow: 0px 0px 7px 0px #cfcfcf;
+  filter:progid:DXImageTransform.Microsoft.Shadow(color=#cfcfcf, Direction=NaN, Strength=7);
+}
+
+.page-listing h1{
+  text-align: center;
+  font-family: "GothamRnd-Light", sans-serif;
+  font-size: 28px;
+  color: #4c4c4c;
+  text-transform: uppercase;
+  font-weight: lighter;
+  margin: 0px;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+.page-listing .block {
+  width: 100%;
+  border-top: 1px solid #e5e5e5;
+  margin-bottom: 80px;
+}
+
+.page-listing .block .content {
+  width: 90%;
+  margin: auto;
+  text-align: left;
+}
+.page-listing .block .content h2 {
+  font-family: "GothamRnd-Light", sans-serif;
+  font-size: 20px;
+  margin: 20px 0px;
+  font-weight: normal;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.page-listing .block .content img{
+  max-width: 90%;
+  margin: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+
+}
+
+.page-listing .block .content .date{
+  font-family: "GothamRnd-Light", sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #393939;
+  font-weight: normal;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.page-listing .block .content .image-crop{
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center center;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+
+.page-listing .block .content a{
+  font-family: "Sanchez", "Times New Roman";
+  font-size: 14px;
+}
+
+.page-listing a.button-pdf{
+  display: inline-block;
+  background-color: #9d2344 !important;
+  color: white !important;
+  font-family: "GothamRnd-Bold", sans-serif;
+  text-align: center;
+  font-weight: normal;
+  text-transform: uppercase;
+  height: 37px !important;
+  line-height: 37px !important;
+  margin-top: 30px !important;
+  vertical-align: middle;
+  -webkit-border-radius: 3px !important;
+  -moz-border-radius: 3px !important;
+  border-radius: 3px !important;
+  padding: 0px 20px !important;
+  border: 1px solid #9d2344 !important;
+}
+.page-listing a.button-pdf p {
+line-height: 13px;
+font-family: "GothamRnd-Bold", sans-serif;
+font-size: 11px;
+color: white;
+text-transform: uppercase;
+}
+
+
+.actu-content {
+  text-align: left;
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.actu-content .image-crop{
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center center;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.actu-content h2 {
+  font-family: "GothamRnd-Light", sans-serif;
+  font-size: 20px;
+  margin: 20px 0px;
+  font-weight: normal;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.actu-content .texte{
+  font-family: "Sanchez", "Times New Roman";
+  font-size: 14px;
+  line-height: 18px;
+  text-align: justify;
+}
+
+.actu-content .date{
+  font-family: "GothamRnd-Light", sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #393939;
+  font-weight: normal;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.background-panel{
+  background-size: 100% 100%;
+  background-image: url(../img/fondCategories.png);
+}
+.background-panel-rouge{
+  background-size: 100% 100%;
+  background-image: url(../img/fondCategories.jpg);
+}
+
+
+.application-mobile{
+  background-color: #f7f6f2;
+}
+
+.application-mobile .fond{
+  display: block;
+  width: 100%;
+}
+
+.application-mobile p{
+  display: block;
+  width: 80%;
+  margin: auto;
+  text-align: left;
+  font-family: "Sanchez", "Times New Roman";
+  font-size: 14px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.application-mobile .bt-applis-ctn{
+  width: 300px;
+  margin: auto;
+}
+
+.application-mobile a.button-appli{
+  margin-left: 10px;
+  margin-right: 10px;
+  float: left;
+  display: block;
+  height: 45%;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+}
+
+.application-mobile .bt-applis-ctn{
+  width: 300px;
+  margin: auto;
+}
+
+
+.application-mobile a.button-appli.applestore{
+  width: 125px;
+  height: 40px;
+  margin-top: 2px;
+  background-image: url(../img/bt_applestore.png);
+}
+
+.application-mobile a.button-appli.playstore{
+  width: 125px;
+  height: 45px;
+  background-image: url(../img/bt_playstore.png);
+}
+
+.resize-image{
+  height: 350px;
+  -webkit-transition: height ease-out 0.3s;
+  -moz-transition: height ease-out 0.3s;
+  -o-transition: height ease-out 0.3s;
+  transition: height ease-out 0.3s;
+}
+
+
+/** RETINA CASE **/
+@media only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+  /* line 869, style.scss */
+  span.logo-menu {
+    background-image: url(../img/logo-menu.png);
+    background-size: 100px 105px;
+  }
+
+  /* line 874, style.scss */
+  ul li:before {
+    background-image: url(../img/ico-etapes@2x.png);
+    background-size: 20px 29px;
+  }
+
+  /* line 879, style.scss */
+  .bande .btn-menu {
+    background-image: url(../img/bt-menu@2x.png);
+    background-size: 22px 19px;
+  }
+
+  /* line 883, style.scss */
+  .bande .btn-retour {
+    background-image: url(../img/bt-retour@2x.png);
+    background-size: 7px 11px;
+  }
+
+  /* line 890, style.scss */
+  ul.themes-liste li span.color:after {
+    background-image: url(../img/fleche@2x.png);
+    background-size: 7px 12px;
+  }
+}

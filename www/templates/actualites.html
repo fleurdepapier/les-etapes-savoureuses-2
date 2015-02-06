@@ -1,0 +1,29 @@
+<ng-include src="'templates/menu.html'"></ng-include>
+
+<snap-content id="page-apropos" class="panel page-listing">
+
+	<section class="panel panel-padding" >
+
+		<ng-include src="'templates/header.html'"></ng-include>
+
+		<p ng-show="!isOnline" style="text-align:center;color:#333">Vous devez être connecté à internet pour consulter les actualités.</p>
+
+		<div class="block" ng-click="goToActu('actualites/'+actu.slug+'-'+actu.id)" ng-repeat="actu in actus">
+			<div class="content">
+
+				<div class="image-crop resize-image"  style="background-image:url({{imgFromStorage(getImageURL(actu.meta._wp_attached_file))}});height:{{resizeImageHeight}}px;" ></div>
+
+				<div class="date" ng-init="formatDate(actu)">{{actu.formatedDate}}</div>
+
+				<h2 ng-bind-html="actu.title_plain"></h2>
+
+				<span ng-show="bloc.link_title != '' && bloc.link != ''">
+					<a href="#/actualites/{{actu.slug}}-{{actu.id}}" title="{{actu.title_plain}}" class="button-pdf"><p>Lire la suite</p></a>
+				</span>
+
+			</div>
+		</div>
+
+	</section>
+	
+</snap-content>

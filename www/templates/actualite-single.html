@@ -1,0 +1,24 @@
+<section class="panel"  >
+	<section style="background-color:{{theme.category_color}};" class="panel panel-padding" ng-class="{center: panel==0, left:panel>0}">
+
+		<div ng-click="updateAnimRetour(true)" >
+			<ng-include src="'templates/headerRetour.html'" ></ng-include>
+		</div>
+
+		<div class="actu-content" ng-show="actu != null && dataLoaded == true">
+
+			<div class="image-crop" style="background-image:url({{imgFromStorage(getImageURL(actu.meta._wp_attached_file))}});" ></div>
+
+			<div class="date">{{actu.formatedDate}}</div>
+
+			<h2 ng-bind-html="actu.title_plain"></h2>
+
+			<div class="texte" ng-bind-html="actu.content"></div>
+
+
+		</div>
+
+		
+	</section>
+</section>
+

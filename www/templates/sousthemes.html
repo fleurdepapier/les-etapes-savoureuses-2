@@ -1,0 +1,35 @@
+<section class="panel"  >
+	<section style="background-color:{{theme.category_color}};" class="panel panel-padding background-panel" ng-class="{center: panel==0, left:panel>0}">
+
+		<div ng-click="updateAnimRetour(true)" >
+			<ng-include src="'templates/headerRetour.html'" ></ng-include>
+		</div>
+
+		<div ng-show="contentLoading" ng-init="setupLoader()" class="loading" >
+			<div id="contentLoadingSousThemes" class="loader-wrapper"></div>
+		</div>
+
+		<div class="list-sous-themes" ng-if="theme.sub_cat" >
+		
+
+			<ul class="themes-liste" >
+
+				<li ng-repeat="soustheme in theme.sub_cat" ng-click="goToSousTheme(soustheme);" ng-style="{'background-color':'{{theme.category_color}}'}">
+					<span class="icon" style="background-image:url({{imgFromStorage(soustheme.sub_cat_icon.url)}});" ></span>
+					<span class="titre">{{soustheme.sub_cat_name}}</span>
+					<span class="nb-etapes" ng-show="isOnline" >
+						<span class="chiffre">{{soustheme.numFound}}</span>
+						<span class="label">étapes</span>
+					</span>
+				</li>
+			</ul>
+		</div>
+		<div class="list-etapes" ng-if="theme.sub_cat == false">
+			<ul class="themes-liste">
+				<ng-include src="'templates/listeEtapes-boucle.html'" ></ng-include>
+			</ul>
+		</div>
+		
+	</section>
+</section>
+

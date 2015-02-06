@@ -1,0 +1,52 @@
+<ng-include src="'templates/menu.html'"></ng-include>
+
+<snap-content class="panel">
+
+	<div class="page-container fadeAnimation"  ng-if="pageName == 'etapes'" ng-switch on="etapesPageName">
+		<section class="panel panel-padding" >
+			
+			<ng-include src="'templates/header.html'"></ng-include>
+
+			<div class="page-acotedemoi" ng-show="etapesPageName == 'acotedemoi' && typeSelection != null && selectionsDatas != null">
+				<div ng-click="toggleFiltres()" class="bt-infos bt-filtre"></div>
+				<div ng-click="toggleFiltres()" class="cover" ng-class="{'close': displayFiltres==false}" ></div>
+
+				<div class="infos" ng-class="{'ng-hide': displayFiltres==false}"  >
+					
+					<p>Je recherche des :</p>
+					<ul>
+						<li ng-repeat="selection in typeSelection">
+							<input type="checkbox" id="select-{{selection.slug}}" ng-model="selectionsDatas[selection.selection_id].selected" /><label for="select-{{selection.slug}}">{{selection.name}}</label>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="animate-switch-container blockactu-{{etapesPageName}} blockprevious-{{oldpage}}">
+				
+				<div class="animate-switch block-themes" ng-switch-when="themes">
+					<p ng-show="connectionProblem" class="error">Vous devez être connecté à internet.</p>
+					<ng-include src="'templates/themes.html'"></ng-include>
+				</div>	
+				<div class="animate-switch block-carte" ng-switch-when="carte">
+					<p ng-show="connectionProblem" class="error">Vous devez être connecté à internet.</p>
+					<ng-include src="'templates/carte.html'"></ng-include>
+				</div>
+				<div class="animate-switch block-acotedemoi" ng-switch-when="acotedemoi">
+					<p ng-show="connectionProblem" class="error">Vous devez être connecté à internet.</p>
+					<ng-include src="'templates/procheDeMoi.html'"></ng-include>
+				</div>
+				
+			</div>
+		</section>
+		
+		<nav class="nav">
+			<span ng-model="etapesPageName" ng-click="etapesPageName='themes'; oldpage='themes'" ng-class="{active: etapesPageName=='themes'}"><p>Thèmes</p></span>
+			<span ng-model="etapesPageName" ng-click="etapesPageName='carte'; getPosition()" ng-class="{active: etapesPageName=='carte'}"><p>Carte</p></span>
+			<span ng-model="etapesPageName" ng-click="etapesPageName='acotedemoi'; oldpage='acotedemoi' ; getPosition()" ng-class="{active: etapesPageName=='acotedemoi'}"><p>A côté de moi</p></span>
+		</nav>
+
+	</div>
+	
+</snap-content>
+

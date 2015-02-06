@@ -1,0 +1,143 @@
+<section class="panel ficheEtape"  >
+	<section class="panel panel-padding" ng-class="{center: panel==0, left:panel>0}">
+		
+		<div ng-click="updateAnimRetour(true)" >
+			<ng-include src="'templates/headerRetour.html'" ></ng-include>
+		</div>
+
+
+		<div ng-hide="noDataForFiche">
+			
+			<div  ng-if="fiche.imagePrincipale.traductionFichiers[0] != null" class="main-image resize-image" style="background-image:url({{fiche.imagePrincipale.traductionFichiers[0].url}});height:{{resizeImageHeight}}px;">
+			</div>
+			
+			<div ng-if="fiche.imagePrincipale.traductionFichiers[0] == null" class="main-image image-manquante"> </div>
+			
+			<div class="clear"></div>
+
+			<div class="content">
+			
+				<div ng-if="getlibelle(fiche.presentation.descriptifCourt) != null" class="little-description" ng-bind-html="replaceN(getlibelle(fiche.presentation.descriptifCourt))">
+				</div>
+
+
+				<div class="fiche-adresse">
+
+		    		<h2 class="contact-titre">Contact</h2>
+
+					{{fiche.localisation.adresse.adresse1}}<br />
+					<span ng-if="fiche.localisation.adresse.adresse2!=null">{{fiche.localisation.adresse.adresse2}}<br /></span>
+					{{fiche.localisation.adresse.codePostal}} {{fiche.localisation.adresse.commune.nom}}
+					<span class="tel">{{tel}}</span>
+					<span class="mail"><a href="mailto:{{mail}}">{{mail}}</a></span>
+				</div>
+
+
+
+				<div class="website" ng-if="website != null || facebook != null || twitter != null " >
+					<a href="{{website}}" target="_blank">{{websiteDisplay}}</a>
+					<a ng-if="twitter != null" href="{{twitter}}" target="_blank" class="twitter-link"><span class="twitter-bt"></span></a>
+					<a ng-if="facebook != null" href="{{facebook}}" target="_blank" class="facebook-link"><span class="facebook-bt"></span></a>
+				</div>
+
+				
+				<a ng-if="lattitude != null && longitude != null" class="complementAccueil itineraire" target="_blank" href="https://www.google.fr/maps/dir/Ma position/{{lattitude}},{{longitude}}/">Comment s'y rendre ?</a>
+
+				<div ng-if="getlibelle(fiche.presentation.descriptifDetaille) != null" class="endetail">
+					<h2>En détail</h2>
+
+					<p ng-bind-html="replaceN(getlibelle(fiche.presentation.descriptifDetaille))"></p>
+				</div>
+
+
+				<div ng-if="getlibelle(fiche.presentation.bonsPlans) != null" class="complementAccueil" ng-bind-html="replaceN(getlibelle(fiche.presentation.bonsPlans))"></div>
+
+				
+
+
+				<div class="horaires" ng-if="getlibelle(fiche.ouverture.periodeEnClair) != null">
+					<h3 class="horaire-titre">Horaires d'ouverture</h3>
+					<p ng-bind-html="replaceN(getlibelle(fiche.ouverture.periodeEnClair))"></p>
+				</div>
+
+				<div class="horaires" ng-if="fiche.visites.visitable">
+					<h3 class="visite-titre">Informations visites</h3>
+					<h4>Visites groupées</h4>
+					<p ng-if="fiche.visites.dureeMoyenneVisiteGroupe">Durée moyenne : {{fiche.visites.dureeMoyenneVisiteGroupe}} min</p>
+					<p ng-repeat="infoVisiteGroup in fiche.visites.prestationsVisitesGroupees">{{getlibelle(infoVisiteGroup)}}</p>
+					
+					<h4>Visites individuelles</h4>
+					<p ng-if="fiche.visites.dureeMoyenneVisiteIndividuelle">Durée moyenne : {{fiche.visites.dureeMoyenneVisiteIndividuelle}} min</p>
+					<p ng-repeat="infoVisiteIndi in fiche.visites.prestationsVisitesIndividuelles">{{getlibelle(infoVisiteIndi)}}</p>
+
+					<h4 ng-if="fiche.visites.complementVisite">Compléments</h4>
+					<p ng-if="fiche.visites.complementVisite">{{getlibelle(fiche.visites.complementVisite)}}</p>
+				</div>
+
+				<div class="horaires" ng-if="getlibelle(fiche.descriptionTarif.tarifsEnClair) != null">
+					<h3 class="tarif-titre">Tarifs</h3>
+					<p ng-bind-html="replaceN(getlibelle(fiche.descriptionTarif.tarifsEnClair))"></p>
+				</div>
+
+				<div ng-if="fiche.prestations.languesParlees != null" class="horaires">
+					<h3 class="langue-titre">Langues parlées</h3>
+					<span style="display: inline-block;" class="langues-bts" ng-repeat="langue in fiche.prestations.languesParlees">
+						<img ng-src="img/langue_de.png" ng-if="langue.id == 1189" alt="Allemand" />
+						<img ng-src="img/langue_es.png" ng-if="langue.id == 1194" alt="Espagnol" />
+						<img ng-src="img/langue_en.png" ng-if="langue.id == 1192" alt="Anglais" />
+						<img ng-src="img/langue_fr.png" ng-if="langue.id == 1197" alt="Francais" />
+					</span>
+				</div>
+
+			
+				<div class="clear"></div>
+
+				<div ng-hide="!hasDistinction" class="horaires" >
+					<h3>Distinctions</h3>
+					<span ng-repeat="distinction in fiche.presentation.typologiesPromoSitra">
+						<img ng-if="hasDisctinctionLogo(distinction)" ng-src="{{baseURL_IMG}}img/distinctions/logoDistinction-{{distinction.id}}.png" class="distinction-logo" alt="{{getlibelle(distinction)}}" />
+					</span>
+					<span ng-repeat="distinction in fiche.informationsRestauration.classementsGuides">
+						<img ng-if="hasDisctinctionLogo(distinction)" ng-src="{{baseURL_IMG}}img/distinctions/logoDistinction-{{distinction.id}}.png" class="distinction-logo" alt="{{getlibelle(distinction)}}" />
+					</span>
+					<span ng-repeat="distinction in fiche.informationsRestauration.chaines">
+						<img ng-if="hasDisctinctionLogo(distinction)" ng-src="{{baseURL_IMG}}img/distinctions/logoDistinction-{{distinction.id}}.png" class="distinction-logo" alt="{{getlibelle(distinction)}}" />
+					</span>
+
+					<div class="clear"></div>
+				</div>
+
+				<div class="clear"></div>
+
+				<div class="endetail">
+					<p ng-if="fiche.informationsRestauration.label">{{fiche.informationsRestauration.label}}</p>
+				</div>
+
+				<div ng-hide="hasDistinction" class="horaires" >
+					<h3>Distinctions</h3>
+				</div>
+				<div class="endetail">
+					<p ng-if="fiche.informationsDegustation.charteQualite" ng-bind-html="replaceN(getlibelle(fiche.informationsDegustation.charteQualite))" ></p>
+				</div>
+
+				<div class="clear"></div>
+
+
+			</div>
+
+
+			<div class="footerFiche"></div>
+
+		</div>
+
+
+		<div ng-show="noDataForFiche">
+
+			<p>Vous devez être connecté à internet pour pouvoir télécharger cette fiche.</p>
+
+		</div>
+
+
+	</section>
+</section>
+

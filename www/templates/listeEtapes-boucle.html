@@ -1,0 +1,7 @@
+
+<li ng-repeat="etape in listeEtapes" style="background-color:{{theme.category_color}};" ng-click="goToFiche(etape.id);"  >
+		<span ng-if="etape.imagePrincipale.traductionFichiers[0].url != null" class="etape-image" style="background-image:url({{etape.imagePrincipale.traductionFichiers[0].url}});"></span>
+		<!--<span ng-if="etape.imagePrincipale.traductionFichiers[0].url != null" class="etape-image"  style="background-image:url({{imgFromStorage(etape.imagePrincipale.traductionFichiers[0].url)}});" ></span>-->
+		<span ng-if="etape.imagePrincipale.traductionFichiers[0].url == null" class="etape-image" ></span>
+		<span class="titre titre-avec-image"><p>{{etape.nom.libelleFr}}</p></span>
+</li>

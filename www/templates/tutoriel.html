@@ -1,0 +1,34 @@
+<section class="panel page">
+	<section class="panel panel-padding" ng-class="{center: panel==0, left:panel>0}">
+		
+		<div class="page-container fadeAnimation tutorial-container" ng-swipe-right="slideAnim = 'swipe-right'; prevSlide()" ng-swipe-left="slideAnim = 'swipe-left'; nextSlide()" ng-switch on="currentSlide">
+
+			<section class="panel panel-padding " >
+				
+				<div class="animate-switch-container {{slideAnim}} slides_ctn">
+
+					<!--<div class="animate-switch block-slide" ng-switch-when="0">
+					    RENCONTREZ
+					</div>	-->
+					<div ng-repeat="slide in dataPage.slide_home" class="animate-switch block-slide" ng-show="currentSlide==$index">
+						<div class="slide_image" style="background-image:url({{slide.image_slide.url}});" ></div>
+						<h1 ng-bind-html="slide.titre_slide"></h1>
+						<div class="texte" ng-bind-html="slide.content_slide"></div>
+					</div>
+					
+				</div>
+			</section>
+
+			<div class="next-slide-btn" ng-class="{hide: currentSlide==nbSlides}" ng-click="slideAnim = 'swipe-left'; nextSlide()" ><span>SUITE</span></div>
+			<div class="next-slide-btn" ng-class="{hide: currentSlide<nbSlides}" ng-click="go('/home/themes')" ><span>EN ROUTE !</span></div>
+
+			<ul class="slider-nav">
+				<!--<li ng-class="{active: currentSlide==0}"></li>-->
+				<li ng-repeat="slide in dataPage.slide_home" ng-class="{active: currentSlide==$index}"></li>
+			</ul>
+			
+		</div>
+		
+	</section>
+</section>
+
