@@ -16,6 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+var lat = null;
+var long = null;
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -35,7 +38,27 @@ var app = {
     onDeviceReady: function() {
         console.log("onDeviceReady");
         if (geoPosition.init()) {
-		   $rootScope.getPosition();
+		   this.getPosition();
 		}
+    },
+
+    getPosition: function(){
+
+        if( lat != null && long != null )
+            return;
+
+        geoPosition.getCurrentPosition(this.geoSuccess, this.geoError, {timeout:5000, maximumAge:0,enableHighAccuracy : true});
+
+    },
+
+    geoSuccess: function(position){
+        lat =  position.coords.latitude;
+        long =  position.coords.longitude;
+        angular.element($('[ng-view]')).rootScope().updateGeoPosition(lat,long);
+    },
+
+    geoError: function(){
+        angular.element($('[ng-view]')).rootScope().geoError();
     }
 };
+

@@ -66,26 +66,7 @@ ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $l
 	$rootScope.geolocationError = false;
 	$rootScope.themesLoaded = false;
 
-	$rootScope.getPosition = function(){
-		if( $rootScope.currentLatitude != null && $rootScope.currentLongitude != null )
-			return;
-
-		geoPosition.getCurrentPosition(geoSuccess, geoError, {timeout:5000, maximumAge:0,enableHighAccuracy : true});
-	}
-
-	function geoSuccess(position) {
-		$rootScope.currentLatitude = position.coords.latitude;
-		$rootScope.currentLongitude = position.coords.longitude;
-		$rootScope.$broadcast('acote-handler');
-	}
-
-	function geoError() {
-		$rootScope.geolocationError = true;
-	}
-
-	if (geoPosition.init()) {
-	   $rootScope.getPosition();
-	}
+	
 
 	$templateCache.removeAll();
 	$rootScope.themes == null;
@@ -289,7 +270,12 @@ ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $l
 
 
 
-
+	$rootScope.updateGeoPosition = function(lat,long) {
+		console.log(lat,long);
+	}
+	$rootScope.geoError = function(){
+		$rootScope.geolocationError = true;
+	}
 });
 
 ngapp.filter('unsafe', function($sce) {
