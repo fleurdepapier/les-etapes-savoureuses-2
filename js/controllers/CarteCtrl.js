@@ -6,6 +6,7 @@ appControllers.controller('CarteCtrl', CarteCtrl);
 
 function CarteCtrl($scope, $rootScope, $http, $location, $timeout)
 {
+	$rootScope.stopLoadingACote = true;
 	$scope.markerRollOver = -1;
 	$scope.scrollPos = 0;
 
