@@ -38,27 +38,23 @@ var app = {
     onDeviceReady: function() {
         console.log("onDeviceReady");
         if (geoPosition.init()) {
-		   this.getPosition();
+		   if( lat != null && long != null )
+                return;
+
+            geoPosition.getCurrentPosition(
+                function(position){
+                    lat =  position.coords.latitude;
+                    long =  position.coords.longitude;
+                    angular.element($('[ng-view]')).rootScope().updateGeoPosition(lat,long);
+                },
+                function(){
+                    angular.element($('[ng-view]')).rootScope().geoError();
+                }
+                , 
+                {timeout:5000, maximumAge:0,enableHighAccuracy : true}
+            );
 		}
-    },
-
-    getPosition: function(){
-
-        if( lat != null && long != null )
-            return;
-
-        geoPosition.getCurrentPosition(this.geoSuccess, this.geoError, {timeout:5000, maximumAge:0,enableHighAccuracy : true});
-
-    },
-
-    geoSuccess: function(position){
-        lat =  position.coords.latitude;
-        long =  position.coords.longitude;
-        angular.element($('[ng-view]')).rootScope().updateGeoPosition(lat,long);
-    },
-
-    geoError: function(){
-        angular.element($('[ng-view]')).rootScope().geoError();
     }
+
 };
 
