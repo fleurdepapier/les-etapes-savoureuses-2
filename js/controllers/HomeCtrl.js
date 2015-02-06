@@ -7,6 +7,8 @@ appControllers.controller('HomeCtrl', HomeCtrl);
 
 function HomeCtrl($scope, $routeParams, $http, $rootScope, $location, $resource, $timeout)
 {
+	$rootScope.stopLoadingACote = true;
+	
 	$scope.pageClass = 'page-home';
 	$scope.oldpage = $routeParams.page;
 	$scope.pageName = 'etapes';

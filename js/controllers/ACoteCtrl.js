@@ -180,7 +180,6 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 
 		placesIndex ++;
 
-		console.log($rootScope.stopLoadingACote);
 		if(placesIndex < $scope.listEtapesProches.length && $rootScope.stopLoadingACote == false ) {
 
 			var destination = $scope.listEtapesProches[placesIndex].destination;
