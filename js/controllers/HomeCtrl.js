@@ -133,7 +133,9 @@ function HomeCtrl($scope, $routeParams, $http, $rootScope, $location, $resource,
 
     
 	$rootScope.updateGeoPosition = function(lat,long) {
-		console.log(lat,long);
+		$rootScope.currentLatitude = lat;
+		$rootScope.currentLongitude = long;
+		$rootScope.$broadcast('acote-handler');
 	}
 	$rootScope.geoError = function(){
 		$rootScope.geolocationError = true;
