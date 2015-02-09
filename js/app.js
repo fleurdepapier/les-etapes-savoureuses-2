@@ -269,6 +269,14 @@ ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $l
     });
 
 
+	$rootScope.updateGeoPosition = function(lat,long) {
+		$rootScope.currentLatitude = lat;
+		$rootScope.currentLongitude = long;
+		$rootScope.$broadcast('acote-handler');
+	}
+	$rootScope.geoError = function(){
+		$rootScope.geolocationError = true;
+	}
 
 });
 
