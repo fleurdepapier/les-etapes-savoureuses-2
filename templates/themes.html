@@ -6,7 +6,7 @@
 	<ul ng-click="updateAnimRetour(false); animToLeft = true" class="themes-liste" >
 
 		<li ng-repeat="theme in themes" ng-click="goToTheme(theme)" >
-			<span class="icon" style="background-image:url({{imgFromStorage(theme.category_icon.url)}});"></span>
+			<span class="icon" ng-init="imgToStorage(theme.category_icon.url)" style="background-image:url({{imgFromStorage(theme.category_icon.url)}});"></span>
 			<span class="titre">{{theme.category_name}}</span>
 			<span class="color"  ng-style="{'background-color':'{{theme.category_color}}'}"></span> 
 		</li>

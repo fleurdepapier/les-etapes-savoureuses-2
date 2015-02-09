@@ -15,7 +15,7 @@
 			<ul class="themes-liste" >
 
 				<li ng-repeat="soustheme in theme.sub_cat" ng-click="goToSousTheme(soustheme);" ng-style="{'background-color':'{{theme.category_color}}'}">
-					<span class="icon" style="background-image:url({{imgFromStorage(soustheme.sub_cat_icon.url)}});" ></span>
+					<span class="icon" ng-init="imgToStorage(soustheme.sub_cat_icon.url)" style="background-image:url({{imgFromStorage(soustheme.sub_cat_icon.url)}});" ></span>
 					<span class="titre">{{soustheme.sub_cat_name}}</span>
 					<span class="nb-etapes" ng-show="isOnline" >
 						<span class="chiffre">{{soustheme.numFound}}</span>

@@ -7,7 +7,7 @@
 
 		<div class="actu-content" ng-show="actu != null && dataLoaded == true">
 
-			<div class="image-crop" style="background-image:url({{imgFromStorage(getImageURL(actu.meta._wp_attached_file))}});" ></div>
+			<div class="image-crop" style="background-image:url({{getImageURL(actu.meta._wp_attached_file)}});" ></div>
 
 			<div class="date">{{actu.formatedDate}}</div>
 

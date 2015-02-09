@@ -83,6 +83,8 @@ ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $l
 
 	if( $rootScope.$storage.images == null)
 		$rootScope.$storage.images = new Array();
+	if( $rootScope.$storage.imagesID == null)
+		$rootScope.$storage.imagesID = new Array();
 
 	$rootScope.$storage.listeEtapesLoaded = new Array();
 	$rootScope.allEtapesForMap = null;
