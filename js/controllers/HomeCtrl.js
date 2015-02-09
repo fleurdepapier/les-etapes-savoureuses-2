@@ -124,6 +124,8 @@ function HomeCtrl($scope, $routeParams, $http, $rootScope, $location, $resource,
 
 	$rootScope.imgFromStorage = function(imgSrc)	{
 
+		console.log( $rootScope.$storage.images[imgSrc]);
+		
 		if( $rootScope.$storage.images[imgSrc] == null && $rootScope.isOnline == true )
 		{
 			$rootScope.$storage.images[imgSrc] = ""; // valeur qui va être remplie
