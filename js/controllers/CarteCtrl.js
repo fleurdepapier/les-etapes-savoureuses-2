@@ -25,6 +25,7 @@ function CarteCtrl($scope, $rootScope, $http, $location, $timeout)
 	}
 
 	$scope.setupMap = function(map){
+		console.log("setupMap");
 		if( map != null && $scope.listeEtapes != null && $scope.allCatMarkers == null )
 		{
 			var latlngbounds = new google.maps.LatLngBounds();
@@ -110,7 +111,7 @@ function CarteCtrl($scope, $rootScope, $http, $location, $timeout)
 
 			map.setCenter(latlngbounds.getCenter());
 			map.fitBounds(latlngbounds); 
-
+			console.log("map fitBounds");
 		}		
 	}
 
@@ -161,9 +162,7 @@ function CarteCtrl($scope, $rootScope, $http, $location, $timeout)
 
 	$rootScope.$on('mapInitialized', function(event, map) {
 		$rootScope.map = map; 
-		var search = $location.search();
-		if( search != null && search.c != null && search.c == "all" )
-			$scope.setupMap(map);
+		$scope.setupMap(map);
 	});
 	
 
@@ -185,12 +184,13 @@ function CarteCtrl($scope, $rootScope, $http, $location, $timeout)
 
 				$scope.listeEtapes = $rootScope.randomizeArray(etapes);
 				$rootScope.allEtapesForMap = $scope.listeEtapes;
-
+				console.log("listeEtapes get from sitra");
 				$scope.setupMap($rootScope.map);
 			});
 
 		}
 		else{
+			console.log("listeEtapes get from cache");
 			$scope.listeEtapes = $rootScope.allEtapesForMap;
 			$scope.setupMap($rootScope.map);
 		}
