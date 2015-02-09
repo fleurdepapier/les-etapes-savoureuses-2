@@ -22,6 +22,8 @@ function TutorielCtrl($scope, $rootScope, $location, $resource)
 			$scope.nbSlides = $scope.dataPage.slide_home.length - 1;
 			console.log($scope.dataPage);
 			$rootScope.$storage.tutoriel = $scope.dataPage;
+			
+			$scope.setTutoHeight();
 		});
 	}
 
