@@ -26,7 +26,7 @@ function CarteCtrl($scope, $rootScope, $http, $location, $timeout)
 
 	$scope.setupMap = function(map){
 		console.log("setupMap");
-		if( map != null && $scope.listeEtapes != null && $scope.allCatMarkers == null )
+		if( map != null && $scope.listeEtapes != null )//&& $scope.allCatMarkers == null )
 		{
 			var latlngbounds = new google.maps.LatLngBounds();
 			$scope.allCatMarkers = [];

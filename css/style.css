@@ -1628,22 +1628,22 @@ margin-bottom: 15px !important;
 
 .page-acotedemoi .cover, .coverJouez{
   position: fixed;
-  top: 0px;
   left: 0px;
   width: 100%;
   height: 100%;
   background-color: #000;
-  opacity: 0.4;
   display: block;
   -webkit-transition: opacity ease-out 0.5s;
   -moz-transition: opacity ease-out 0.5s;
   -o-transition: opacity ease-out 0.5s;
   transition: opacity ease-out 0.5s;
   z-index: 1;
-}
-.page-acotedemoi .cover.close, .coverJouez.close{
   top: -100%;
   opacity: 0;
+}
+.page-acotedemoi .cover.open, .coverJouez.open{
+  top: 0px;
+  opacity: 0.4;
 }
 
 
