@@ -1670,6 +1670,10 @@ margin-bottom: 15px !important;
 }
 
 .page-acotedemoi .infos{
+  top: -100% !important;
+}
+
+.page-acotedemoi .infos{
   position: fixed;
   background-color: #f7f6f2;
   color: #333;
@@ -1678,8 +1682,11 @@ margin-bottom: 15px !important;
 }
 
 
-#page-jouez .infos.ng-hide, .page-acotedemoi .infos.ng-hide{
+#page-jouez .infos.ng-hide{
   top: -100% !important;
+}
+.page-acotedemoi .infos.ng-show{
+  top: 50px !important;
 }
 
 
