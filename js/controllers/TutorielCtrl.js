@@ -13,6 +13,7 @@ function TutorielCtrl($scope, $rootScope, $location, $resource)
 	$scope.slideAnim = 'swipe-left';
 	$scope.nbSlides = 0;
 
+	$scope.tutoHeight = false;
 	
 	if( $rootScope.isOnline == true ){
 		var WPAPI = $resource(baseURLWordpress+'?wpapi=get_posts&dev=1&type=page&id=7', null, {'query' : {method:'GET', params:{isArray:false}} });
@@ -46,6 +47,17 @@ function TutorielCtrl($scope, $rootScope, $location, $resource)
 
     $scope.go = function ( path ) {
 		$location.path( path );
+	};
+
+	$scope.setTutoHeight = function(){
+		$timeout( function(){
+			$("#tuto-content .block-slide").each(function(){
+				console.log($(this).height());
+				var height = -Math.round( $(this).height() *.5)-50;
+				$(this).css("margin-top", height+"px");
+			});
+			$scope.tutoHeight = true;
+		} , 100 );
 	};
 
 }
