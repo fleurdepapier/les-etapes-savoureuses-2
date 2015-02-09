@@ -5,7 +5,7 @@ var appControllers = angular.module('appControllers', []);
 
 appControllers.controller('TutorielCtrl', TutorielCtrl);
 
-function TutorielCtrl($scope, $rootScope, $location, $resource)
+function TutorielCtrl($scope, $rootScope, $location, $resource, $timeout)
 {
 	$rootScope.pageClass = "tutoriel-page";
 	$rootScope.firstBuild = 'tutoriel';
@@ -22,7 +22,7 @@ function TutorielCtrl($scope, $rootScope, $location, $resource)
 			$scope.nbSlides = $scope.dataPage.slide_home.length - 1;
 			console.log($scope.dataPage);
 			$rootScope.$storage.tutoriel = $scope.dataPage;
-			
+
 			$scope.setTutoHeight();
 		});
 	}
