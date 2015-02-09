@@ -196,7 +196,7 @@ function CarteCtrl($scope, $rootScope, $http, $location, $timeout)
 		}
 		
 	
-	} , 500 );
+	} , 1000 );
 
 	
 }

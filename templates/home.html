@@ -40,7 +40,7 @@
 			</div>
 		</section>
 		
-		<nav class="nav">
+		<nav class="nav" ng-show="themes != null" >
 			<span ng-model="etapesPageName" ng-click="etapesPageName='themes'; oldpage='themes'" ng-class="{active: etapesPageName=='themes'}"><p>Thèmes</p></span>
 			<span ng-model="etapesPageName" ng-click="etapesPageName='carte'; getPosition()" ng-class="{active: etapesPageName=='carte'}"><p>Carte</p></span>
 			<span ng-model="etapesPageName" ng-click="etapesPageName='acotedemoi'; oldpage='acotedemoi' ; getPosition()" ng-class="{active: etapesPageName=='acotedemoi'}"><p>A côté de moi</p></span>
