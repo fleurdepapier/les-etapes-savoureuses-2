@@ -18,6 +18,15 @@ function NavCtrl($scope, $rootScope, $location, $resource)
     	}
     	$location.path(page);
     }
+    
+    $scope.switchLanguage = function(){
+    	if( $rootScope.lang == "fr" ){
+    		window.location = "./?l=en";
+    	} 
+    	else{
+    		window.location = "./?l=fr";
+    	}
+    }
 	
 	// Initialisation du menu A propos :
 

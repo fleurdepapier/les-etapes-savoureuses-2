@@ -60,6 +60,9 @@ ngapp.config(['$routeProvider', function($routeProvider) {
 var baseURL = "http://www.lesetapessavoureuses.fr/lesetapessavoureuses-app-dev/";
 var baseURLWordpress = "http://www.lesetapessavoureuses.fr/";
 
+if( lang == "en" )
+	baseURLWordpress = "http://en.lesetapessavoureuses.fr/";
+
 
 ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $localStorage, $timeout, $http)
 {
