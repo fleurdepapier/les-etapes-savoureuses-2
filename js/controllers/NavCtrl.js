@@ -18,13 +18,13 @@ function NavCtrl($scope, $rootScope, $location, $resource)
     	}
     	$location.path(page);
     }
-    
+
     $scope.switchLanguage = function(){
     	if( $rootScope.lang == "fr" ){
-    		window.location = "./?l=en";
+    		document.location = "index.html?l=en";
     	} 
     	else{
-    		window.location = "./?l=fr";
+    		document.location = "index.html?l=fr";
     	}
     }
 	
