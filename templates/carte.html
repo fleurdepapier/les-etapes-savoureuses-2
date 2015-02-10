@@ -1,7 +1,7 @@
 <div class="page page-under-header background-panel-rouge" ng-controller="CarteCtrl">
 
 
-	<p class="error window-connect" ng-hide="isOnline" >Attention ! Vous devez être connecté à internet pour afficher la carte.</p>
+	<p class="error window-connect" ng-hide="isOnline" >{{getTrad('connexion_issue_carte')}}</p>
 
 	<map id="allEtapesMap" zoom="10" center="Ardèche, France" zoom-control="false" map-type-control="false" overview-map-control="false" pan-control="false" rotate-control="false" scale-control="false" street-view-control="false"></map>
 	

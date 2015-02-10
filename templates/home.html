@@ -13,7 +13,7 @@
 
 				<div class="infos" ng-class="{'ng-show': displayFiltres==true}"  >
 					
-					<p>Je recherche des :</p>
+					<p>{{getTrad('recherche_acote')}}</p>
 					<ul>
 						<li ng-repeat="selection in typeSelection">
 							<input type="checkbox" id="select-{{selection.slug}}" ng-model="selectionsDatas[selection.selection_id].selected" /><label for="select-{{selection.slug}}">{{selection.name}}</label>
@@ -25,15 +25,15 @@
 			<div class="animate-switch-container blockactu-{{etapesPageName}} blockprevious-{{oldpage}}">
 				
 				<div class="animate-switch block-themes" ng-switch-when="themes">
-					<p ng-show="connectionProblem" class="error">Vous devez être connecté à internet.</p>
+					<p ng-show="connectionProblem" class="error">{{getTrad('connexion_issue')}}</p>
 					<ng-include src="'templates/themes.html'"></ng-include>
 				</div>	
 				<div class="animate-switch block-carte" ng-switch-when="carte">
-					<p ng-show="connectionProblem" class="error">Vous devez être connecté à internet.</p>
+					<p ng-show="connectionProblem" class="error">{{getTrad('connexion_issue')}}</p>
 					<ng-include src="'templates/carte.html'"></ng-include>
 				</div>
 				<div class="animate-switch block-acotedemoi" ng-switch-when="acotedemoi">
-					<p ng-show="connectionProblem" class="error">Vous devez être connecté à internet.</p>
+					<p ng-show="connectionProblem" class="error">{{getTrad('connexion_issue')}}</p>
 					<ng-include src="'templates/procheDeMoi.html'"></ng-include>
 				</div>
 				
@@ -41,9 +41,9 @@
 		</section>
 		
 		<nav class="nav" ng-show="themes != null" >
-			<span ng-model="etapesPageName" ng-click="etapesPageName='themes'; oldpage='themes'" ng-class="{active: etapesPageName=='themes'}"><p>Thèmes</p></span>
-			<span ng-model="etapesPageName" ng-click="etapesPageName='carte'; getPosition()" ng-class="{active: etapesPageName=='carte'}"><p>Carte</p></span>
-			<span ng-model="etapesPageName" ng-click="etapesPageName='acotedemoi'; oldpage='acotedemoi' ; getPosition()" ng-class="{active: etapesPageName=='acotedemoi'}"><p>A côté de moi</p></span>
+			<span ng-model="etapesPageName" ng-click="etapesPageName='themes'; oldpage='themes'" ng-class="{active: etapesPageName=='themes'}"><p>{{getTrad('theme_nav')}}</p></span>
+			<span ng-model="etapesPageName" ng-click="etapesPageName='carte'; getPosition()" ng-class="{active: etapesPageName=='carte'}"><p>{{getTrad('carte_nav')}}</p></span>
+			<span ng-model="etapesPageName" ng-click="etapesPageName='acotedemoi'; oldpage='acotedemoi' ; getPosition()" ng-class="{active: etapesPageName=='acotedemoi'}"><p>{{getTrad('acote_nav')}}</p></span>
 		</nav>
 
 	</div>

@@ -92,11 +92,6 @@ function EtapeCtrl($scope, $rootScope, $routeParams, $http, $timeout)
 		//	$scope.setupMap($scope.map);
 	}
 
-
-	$scope.replaceN = function(data){
-		return data.replace(/\n/g, "<br />");
-	}
-
 	$scope.hasDisctinctionLogo = function(distinction){
 		/*if( distinction.id == 2968 || distinction.id == 2969 )
 			distinction.id = 1597; // Pour les deux logos Guide du routards décliné, on met guide du routard normal

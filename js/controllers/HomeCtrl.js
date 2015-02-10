@@ -13,8 +13,8 @@ function HomeCtrl($scope, $routeParams, $http, $rootScope, $location, $resource,
 	$scope.oldpage = $routeParams.page;
 	$scope.pageName = 'etapes';
 	$rootScope.etapesPageName = $routeParams.page;
-	$scope.pageTitle1 = "Quelle sera";
-	$scope.pageTitle2 = "votre prochaine étape ?";
+	$scope.pageTitle1 = $rootScope.getTrad('titre_accueil_1');
+	$scope.pageTitle2 = $rootScope.getTrad('titre_accueil_2');
 	$rootScope.currentTheme = null;
 	$rootScope.currentSousTheme = null;
 

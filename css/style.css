@@ -702,6 +702,7 @@ body.right .view.ng-enter {
   border-bottom: 1px solid #ffffff;
   text-align: left;
   overflow: hidden;
+  padding-bottom: 50px;
 }
 /* line 514, style.scss */
 .menu-container ul li {
@@ -754,6 +755,12 @@ body.right .view.ng-enter {
 
 }
 
+.menu-container ul li.reglages :before{
+  background-image: url(../img/ico-reglages.png);
+  background-size: auto 30px;
+  background-position: 10px 6px;
+
+}
 
 /* line 533, style.scss */
 .menu-container ul li span {
@@ -800,6 +807,7 @@ body.right .view.ng-enter {
   -o-box-shadow: inset 0px 7px 10px -4px #333333;
   box-shadow: inset 0px 7px 10px -4px #333333;
   filter: progid:DXImageTransform.Microsoft.Shadow(color=#333, Direction=180, Strength=10);
+  padding-bottom: 0px;
 }
 /* line 572, style.scss */
 .menu-container ul ul.sousmenu li {

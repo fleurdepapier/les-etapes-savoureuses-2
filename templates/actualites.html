@@ -6,7 +6,6 @@
 
 		<ng-include src="'templates/header.html'"></ng-include>
 
-		<p ng-show="!isOnline" style="text-align:center;color:#333">Vous devez être connecté à internet pour consulter les actualités.</p>
 
 		<div class="block" ng-click="goToActu('actualites/'+actu.slug+'-'+actu.id)" ng-repeat="actu in actus">
 			<div class="content">
@@ -18,7 +17,7 @@
 				<h2 ng-bind-html="actu.title_plain"></h2>
 
 				<span ng-show="bloc.link_title != '' && bloc.link != ''">
-					<a href="#/actualites/{{actu.slug}}-{{actu.id}}" title="{{actu.title_plain}}" class="button-pdf"><p>Lire la suite</p></a>
+					<a href="#/actualites/{{actu.slug}}-{{actu.id}}" title="{{actu.title_plain}}" class="button-pdf"><p>{{getTrad('lire_suite')}}</p></a>
 				</span>
 
 			</div>

@@ -41,10 +41,10 @@
 				</div>
 
 				
-				<a ng-if="lattitude != null && longitude != null" class="complementAccueil itineraire" target="_blank" href="https://www.google.fr/maps/dir/Ma position/{{lattitude}},{{longitude}}/">Comment s'y rendre ?</a>
+				<a ng-if="lattitude != null && longitude != null" class="complementAccueil itineraire" target="_blank" href="https://www.google.fr/maps/dir/Ma position/{{lattitude}},{{longitude}}/">{{getTrad('sy_rendre')}}</a>
 
 				<div ng-if="getlibelle(fiche.presentation.descriptifDetaille) != null" class="endetail">
-					<h2>En détail</h2>
+					<h2>{{getTrad('detail')}}</h2>
 
 					<p ng-bind-html="replaceN(getlibelle(fiche.presentation.descriptifDetaille))"></p>
 				</div>
@@ -56,31 +56,31 @@
 
 
 				<div class="horaires" ng-if="getlibelle(fiche.ouverture.periodeEnClair) != null">
-					<h3 class="horaire-titre">Horaires d'ouverture</h3>
+					<h3 class="horaire-titre">{{getTrad('horaires')}}</h3>
 					<p ng-bind-html="replaceN(getlibelle(fiche.ouverture.periodeEnClair))"></p>
 				</div>
 
 				<div class="horaires" ng-if="fiche.visites.visitable">
-					<h3 class="visite-titre">Informations visites</h3>
-					<h4>Visites groupées</h4>
-					<p ng-if="fiche.visites.dureeMoyenneVisiteGroupe">Durée moyenne : {{fiche.visites.dureeMoyenneVisiteGroupe}} min</p>
+					<h3 class="visite-titre">{{getTrad('visites')}}</h3>
+					<h4>{{getTrad('groupe')}}</h4>
+					<p ng-if="fiche.visites.dureeMoyenneVisiteGroupe">{{getTrad('duree_moyenne')}} : {{fiche.visites.dureeMoyenneVisiteGroupe}} min</p>
 					<p ng-repeat="infoVisiteGroup in fiche.visites.prestationsVisitesGroupees">{{getlibelle(infoVisiteGroup)}}</p>
 					
-					<h4>Visites individuelles</h4>
-					<p ng-if="fiche.visites.dureeMoyenneVisiteIndividuelle">Durée moyenne : {{fiche.visites.dureeMoyenneVisiteIndividuelle}} min</p>
+					<h4>{{getTrad('individuel')}}</h4>
+					<p ng-if="fiche.visites.dureeMoyenneVisiteIndividuelle">{{getTrad('duree_moyenne')}} : {{fiche.visites.dureeMoyenneVisiteIndividuelle}} min</p>
 					<p ng-repeat="infoVisiteIndi in fiche.visites.prestationsVisitesIndividuelles">{{getlibelle(infoVisiteIndi)}}</p>
 
-					<h4 ng-if="fiche.visites.complementVisite">Compléments</h4>
+					<h4 ng-if="fiche.visites.complementVisite">{{getTrad('complement')}}</h4>
 					<p ng-if="fiche.visites.complementVisite">{{getlibelle(fiche.visites.complementVisite)}}</p>
 				</div>
 
 				<div class="horaires" ng-if="getlibelle(fiche.descriptionTarif.tarifsEnClair) != null">
-					<h3 class="tarif-titre">Tarifs</h3>
+					<h3 class="tarif-titre">{{getTrad('tarifs')}}</h3>
 					<p ng-bind-html="replaceN(getlibelle(fiche.descriptionTarif.tarifsEnClair))"></p>
 				</div>
 
 				<div ng-if="fiche.prestations.languesParlees != null" class="horaires">
-					<h3 class="langue-titre">Langues parlées</h3>
+					<h3 class="langue-titre">{{getTrad('langue')}}</h3>
 					<span style="display: inline-block;" class="langues-bts" ng-repeat="langue in fiche.prestations.languesParlees">
 						<img ng-src="img/langue_de.png" ng-if="langue.id == 1189" alt="Allemand" />
 						<img ng-src="img/langue_es.png" ng-if="langue.id == 1194" alt="Espagnol" />
@@ -117,7 +117,7 @@
 					<h3>Distinctions</h3>
 				</div>
 				<div class="endetail">
-					<p style="clear: both;" ng-if="fiche.informationsDegustation.charteQualite" ng-bind-html="replaceN(getlibelle(fiche.informationsDegustation.charteQualite))" ></p>
+					<p ng-if="fiche.informationsDegustation.charteQualite" ng-bind-html="replaceN(getlibelle(fiche.informationsDegustation.charteQualite))" ></p>
 				</div>
 
 				<div class="clear"></div>
@@ -133,7 +133,7 @@
 
 		<div ng-show="noDataForFiche">
 
-			<p>Vous devez être connecté à internet pour pouvoir télécharger cette fiche.</p>
+			<p><br />{{getTrad('connexion_issue')}}</p>
 
 		</div>
 

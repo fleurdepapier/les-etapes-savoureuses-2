@@ -9,13 +9,13 @@
 		<!--<div ng-show="isOnline && dataPage">-->
 		<div class="application-mobile">
 			
-			<h1 style="font-size:17px; line-height:20px;">EMPORTEZ<br />LES ÉTAPES SAVOUREUSES<br />AVEC VOUS !</h1>
+			<h1 style="font-size:17px; line-height:20px;" ng-bind-html="getTrad('appli_titre')"></h1>
+
 
 			<div>
 				<img class="fond" src="img/appli-fond1.png" alt="Application mobile Les étapes savoureuses"/>
 
-				<p>Emportez les étapes savoureuses dans votre poche grâce à l’application mobile.<br />
-Découvrez les producteurs et les entreprises, les fêtes et les marchés, les musées gourmands et les restaurants de qualité proches de vous.</p>
+				<p ng-bind-html="getTrad('appli_texte')"></p>
 				
 				<div class="bt-applis-ctn">
 					<a href="jhfdhfjkds" target="_blank" class="button-appli playstore"></a>

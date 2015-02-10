@@ -61,12 +61,28 @@ var baseURL = "http://www.lesetapessavoureuses.fr/lesetapessavoureuses-app-dev/"
 var baseURLWordpress = "http://www.lesetapessavoureuses.fr/";
 
 
-ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $localStorage, $timeout)
+ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $localStorage, $timeout, $http)
 {
 	$rootScope.geolocationError = false;
 	$rootScope.themesLoaded = false;
 
-	
+	// Traduction 
+	$rootScope.trads = null;
+	$rootScope.lang = lang;
+	$http.get('datas/trad.json').success(function(datas){
+		console.log(datas);
+		$rootScope.trads = datas;
+		$rootScope.loadingTrad = $rootScope.getTrad("loading");
+	});
+	$rootScope.getTrad = function(id){
+		if( $rootScope.trads[id] == null )
+			return "";
+
+		if( lang == "fr" )
+			return $rootScope.trads[id]['fr'];
+
+		return $rootScope.trads[id]['en'];
+	}
 
 	$templateCache.removeAll();
 	$rootScope.themes == null;
@@ -202,6 +218,10 @@ ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $l
 		}
 	}
 
+	$rootScope.replaceN = function(data){
+		return data.replace(/\n/g, "<br />");
+	}
+
 	// Detecter les changements de connexion a internet
 	$rootScope.isOnline = navigator.onLine;
 	$rootScope.alertOffline = false;
@@ -212,12 +232,12 @@ ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $l
 		
 		$timeout( function(){ 
 			swal({   
-				title: "Souhaitez-vous télécharger l'application mobile ?",   
-				text: "Emportez les étapes savoureuses avec vous !",
+				title: $rootScope.getTrad('swal_appli_titre'),//"Souhaitez-vous télécharger l'application mobile ?",   
+				text: $rootScope.getTrad('swal_appli_texte'),//"Emportez les étapes savoureuses avec vous !",
 				showCancelButton: true,   
 				confirmButtonColor: "#9d2344",   
-				confirmButtonText: "Oui",   
-				cancelButtonText: "Non, merci",   
+				confirmButtonText: $rootScope.getTrad('oui'),//"Oui",   
+				cancelButtonText: $rootScope.getTrad('non_merci'),//"Non, merci",   
 				closeOnConfirm: false,   
 				closeOnCancel: true
 			}, function(isConfirm){
@@ -245,8 +265,8 @@ ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $l
 			$rootScope.alertOffline = true;
 
 			swal({   
-				title: "Attention !",   
-				text: "Vous n'êtes pas connecté à internet. Vous n'aurez donc pas accès à toutes les fonctionnalités du site.",   
+				title: $rootScope.getTrad('swal_connect_titre'),//"Attention !",   
+				text: $rootScope.getTrad('swal_connect_texte'),//"Vous n'êtes pas connecté à internet. Vous n'aurez donc pas accès à toutes les fonctionnalités du site.",   
 				type: "warning" 
 			});
 			$location.path('/home/themes');

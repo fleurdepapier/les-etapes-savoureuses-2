@@ -5,24 +5,24 @@
 
 		<ul>
 			<li snap-toggle class="etapes" ng-class="{active: pageName=='etapes'}" ng-click="goToPage('home/themes')" >
-				<span>Quelle sera<br />votre prochaine étape ?</span>
+				<span ng-bind-html="getTrad('menu_accueil')"></span>
 			</li>
 			<li snap-toggle class="actualites" ng-class="{active: pageName=='actualites'}" ng-click="goToPage('actualites')" >
-				<span>Actualités</span>
+				<span>{{getTrad('menu_actu')}}</span>
 			</li>
-			<li snap-toggle class="jouer" ng-class="{active: pageName=='jouer'}" ng-click="goToPage('jouer')" >
-				<span>Jouer</span>
+			<li ng-if="lang=='fr'" snap-toggle class="jouer" ng-class="{active: pageName=='jouer'}" ng-click="goToPage('jouer')" >
+				<span>{{getTrad('menu_jouer')}}</span>
 			</li>
 			<li ng-show="version == 'site-mobile'" snap-toggle class="appli" ng-class="{active: pageName=='application-mobile'}" ng-click="goToPage('application-mobile')" >
-				<span>Application mobile</span>
+				<span>{{getTrad('menu_appli')}}</span>
 			</li>
 
 			<li ng-hide="isOnline" snap-toggle class="about" ng-click="goToPage('connexion-problem')" >
-				<span>A propos</span>
+				<span>{{getTrad('menu_apropos')}}</span>
 			</li>
 			
 			<li ng-show="isOnline" ng-click="isReglagesOpen = false ; isAboutOpen = !isAboutOpen"  class="about parent" ng-class="{open: isAboutOpen || pageName=='apropos' }">
-				<span>A propos</span>
+				<span>{{getTrad('menu_apropos')}}</span>
 			</li>
 				<ul class="sousmenu" ng-class="{activate: isAboutOpen || pageName == 'apropos'}">
 
@@ -30,6 +30,16 @@
 						<span >{{lien.post_title}}</span>
 					</li>
 				</ul>
+
+			<li ng-show="isOnline" ng-click="isAboutOpen = false ; isReglagesOpen = !isReglagesOpen"  class="reglages parent" ng-class="{open: isReglagesOpen || pageName=='reglages' }">
+				<span>{{getTrad('menu_reglages')}}</span>
+			</li>
+				<ul class="sousmenu" ng-class="{activate: isReglagesOpen || pageName == 'reglages'}">
+					<li class="quisommesnous" ng-click="switchLanguage()">
+						<span >{{getTrad('version')}}</span>
+					</li>
+				</ul>
+				
 		</ul>
 	</div>
 </snap-drawer>

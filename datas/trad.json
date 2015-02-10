@@ -1,0 +1,158 @@
+{
+	"loading" : {
+		"fr" : "CHARGEMENT",
+		"en" : "LOADING"
+	},
+	"titre_accueil_1" : {
+		"fr" : "QUELLE SERA",
+		"en" : "WHAT WILL BE"
+	},
+	"titre_accueil_2" : {
+		"fr" : "VOTRE PROCHAINE ÉTAPE",
+		"en" : "YOUR NEXT STOP"
+	},
+	"theme_nav" : {
+		"fr" : "Thèmes",
+		"en" : "Category"
+	},
+	"carte_nav" : {
+		"fr" : "Carte",
+		"en" : "Map"
+	},
+	"acote_nav" : {
+		"fr" : "À côté de moi",
+		"en" : "Near from me"
+	},
+	"theme_nav" : {
+		"fr" : "Thèmes",
+		"en" : "Category"
+	},
+	"menu_accueil" : {
+		"fr" : "Quelle sera<br />votre prochaine étape ?",
+		"en" : "What will be<br />your next stop ?"
+	},
+	"menu_actu" : {
+		"fr" : "Actualités",
+		"en" : "News"
+	},
+	"menu_jouer" : {
+		"fr" : "Jouer",
+		"en" : "Play"
+	},
+	"menu_appli" : {
+		"fr" : "Application mobile",
+		"en" : "Mobile application"
+	},
+	"menu_apropos" : {
+		"fr" : "A propos",
+		"en" : "About"
+	},
+	"menu_reglages" : {
+		"fr" : "Réglages",
+		"en" : "Settings"
+	},
+	"swal_appli_titre" : {
+		"fr" : "Souhaitez-vous télécharger l'application mobile ?",
+		"en" : "Would you like to download the mobile app ?"
+	},
+	"swal_appli_texte" : {
+		"fr" : "Emportez les étapes savoureuses avec vous !",
+		"en" : "Take \"Etapes savoureuses\" wherever you go !"
+	},
+	"oui" : {
+		"fr" : "Oui",
+		"en" : "Yes"
+	},
+	"non_merci" : {
+		"fr" : "Non, merci",
+		"en" : "No, thanks"
+	},
+	"swal_connect_titre" : {
+		"fr" : "Attention !",
+		"en" : "Be careful !"
+	},
+	"swal_connect_texte" : {
+		"fr" : "Vous n'êtes pas connecté à internet. Vous n'aurez donc pas accès à toutes les fonctionnalités du site.",
+		"en" : "You'r not connected to internet. You will not have access to all features."
+	},
+	"recherche_acote" : {
+		"fr" : "Je recherche des :",
+		"en" : "I'm looking for :"
+	},
+	"connexion_issue" : {
+		"fr" : "Vous devez être connecté à internet pour afficher cette page.",
+		"en" : "You need an internet connection to display this page."
+	},
+	"connexion_issue_title" : {
+		"fr" : "IMPOSSIBLE DE CHARGER LA PAGE",
+		"en" : "UNABLE TO LOAD THE PAGE"
+	},
+	"connexion_issue_carte" : {
+		"fr" : "Attention ! Vous devez être connecté à internet pour afficher la carte.",
+		"en" : "Be carefult ! You need an internet connection to display this map."
+	},
+	"etapes" : {
+		"fr" : "ÉTAPES",
+		"en" : "STOPS"
+	},
+	"lire_suite" : {
+		"fr" : "LIRE LA SUITE",
+		"en" : "READ MORE"
+	},
+	"sy_rendre" : {
+		"fr" : "Comment s'y rendre ?",
+		"en" : "How to get there ?"
+	},
+	"sy_rendre" : {
+		"fr" : "Comment s'y rendre ?",
+		"en" : "How to get there ?"
+	},
+	"detail" : {
+		"fr" : "En détail",
+		"en" : "Details"
+	},
+	"horaires" : {
+		"fr" : "Horaires d'ouverture",
+		"en" : "Opening hours"
+	},
+	"visites" : {
+		"fr" : "Informations visites",
+		"en" : "Informations"
+	},
+	"groupe" : {
+		"fr" : "Visites groupées",
+		"en" : "Groups"
+	},
+	"individuel" : {
+		"fr" : "Visites individuelles",
+		"en" : "Individuals"
+	},
+	"duree_moyenne" :{
+		"fr" : "Durée moyenne",
+		"en" : "Average duration"
+	},
+	"complement" :{
+		"fr" : "Compléments",
+		"en" : "Complements"
+	},
+	"tarifs" :{
+		"fr" : "Tarifs",
+		"en" : "Rates"
+	},
+	"langue" :{
+		"fr" : "Langues parlées",
+		"en" : "Speaking languages"
+	},
+	"version" :{
+		"fr" : "English version",
+		"en" : "Version française"
+	},
+	"appli_titre" :{
+		"fr" : "EMPORTEZ<br />LES ÉTAPES SAVOUREUSES<br />AVEC VOUS !",
+		"en" : "TAKE<br />\"ETAPES SAVOUREUSES\"<br />WHEREVER YOU GO !"
+	},
+	"appli_texte" :{
+		"fr" : "Emportez les étapes savoureuses dans votre poche grâce à l’application mobile.<br />Découvrez les producteurs et les entreprises, les fêtes et les marchés, les musées gourmands et les restaurants de qualité proches de vous.",
+		"en" : "Take \"Etapes savoureuses\" wherever you go thanks to the mobile application.<br />Discover producers and businesses, festivals and markets, gastronomic museums and quality restaurants in the area. "
+	}
+}
