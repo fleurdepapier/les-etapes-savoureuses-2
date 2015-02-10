@@ -20,11 +20,11 @@ function NavCtrl($scope, $rootScope, $location, $resource)
     }
 
     $scope.switchLanguage = function(){
-    	if( $rootScope.lang == "fr" ){
-    		document.location = "index.html?l=en";
+    	if( $rootScope.lang == "en" ){
+    		document.location = "index.html?l=fr";
     	} 
     	else{
-    		document.location = "index.html?l=fr";
+    		document.location = "index.html?l=en";
     	}
     }
 	
