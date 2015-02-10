@@ -177,7 +177,8 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 
 
     $scope.calculateDistance = function(response, statuts){
-		if(response) {
+		if(response && statuts == "OK") {
+			$scope.error = false;
 			$scope.listEtapesProches[placesIndex].km = response.rows[0].elements[0].distance;
 			$scope.listEtapesProches[placesIndex].km.valueRounded = Math.round($scope.listEtapesProches[placesIndex].km.value/1000);
 			//console.log( $scope.listEtapesProches[placesIndex] );
@@ -190,6 +191,7 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 		if(placesIndex < $scope.listEtapesProches.length && $rootScope.stopLoadingACote == false ) {
 
 			var destination = $scope.listEtapesProches[placesIndex].destination;
+			$scope.origin = new google.maps.LatLng($rootScope.currentLatitude, $rootScope.currentLongitude);
 
 			service.getDistanceMatrix(
 			{
