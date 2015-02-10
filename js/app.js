@@ -210,10 +210,10 @@ ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $l
 		if( data == null )
 			return null;
 
-		if( currentLanguage == "en" && data.libelleEn != null ){
+		if( lang == "en" && data.libelleEn != null ){
 			return data.libelleEn;
 		}
-		else if( currentLanguage == "fr" && data.libelleFr != null ){
+		else if( lang == "fr" && data.libelleFr != null ){
 			return data.libelleFr;
 		}
 		else{
