@@ -50,9 +50,12 @@
 		    $_GET[decode(arguments[1])] = decode(arguments[2]);
 		});
 
-		console.log($_GET["l"]);
+		var lang = "fr";
+		if( $_GET["l"] != "" )
+			lang = $_GET["l"];
 
-    	var lang = $_GET["l"];
+		console.log($_GET["l"]);
+		
     	var version = "appli-mobile";
     </script>
 

@@ -81,10 +81,10 @@ ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $l
 		if( $rootScope.trads[id] == null )
 			return "";
 
-		if( lang == "fr" )
-			return $rootScope.trads[id]['fr'];
+		if( lang == "en" )
+			return $rootScope.trads[id]['en'];
 
-		return $rootScope.trads[id]['en'];
+		return $rootScope.trads[id]['fr'];
 	}
 
 	$templateCache.removeAll();
