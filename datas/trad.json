@@ -91,6 +91,10 @@
 		"fr" : "Attention ! Vous devez être connecté à internet pour afficher la carte.",
 		"en" : "Be carefult ! You need an internet connection to display this map."
 	},
+	"geoloc_issue" : {
+		"fr" : "Impossible de vous localiser. Veuillez vérifier vos paramètres ou votre connexion internet.",
+		"en" : "Unable to locate you. Please check your settings or your internet connection."
+	},
 	"etapes" : {
 		"fr" : "ÉTAPES",
 		"en" : "STOPS"
