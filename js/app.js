@@ -57,7 +57,7 @@ ngapp.config(['$routeProvider', function($routeProvider) {
 }]);
 
 
-var baseURL = "http://www.lesetapessavoureuses.fr/lesetapessavoureuses-app-dev/";
+var baseURL = "http://www.lesetapessavoureuses.fr/lesetapessavoureuses-app/";
 var baseURLWordpress = "http://www.lesetapessavoureuses.fr/";
 
 if( lang == "en" )
@@ -69,9 +69,14 @@ ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $l
 	$rootScope.geolocationError = false;
 	$rootScope.themesLoaded = false;
 
+
 	// Traduction 
 	$rootScope.trads = null;
 	$rootScope.lang = lang;
+
+	if( $rootScope.lang == null )
+		$rootScope.lang = "fr";
+
 	$http.get('datas/trad.json').success(function(datas){
 		console.log(datas);
 		$rootScope.trads = datas;
@@ -81,10 +86,31 @@ ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $l
 		if( $rootScope.trads[id] == null )
 			return "";
 
-		if( lang == "en" )
+		if( $rootScope.lang == "en" )
 			return $rootScope.trads[id]['en'];
 
 		return $rootScope.trads[id]['fr'];
+	}
+
+	$rootScope.getPosition = function(){
+		if( $rootScope.currentLatitude != null && $rootScope.currentLongitude != null )
+			return;
+
+		geoPosition.getCurrentPosition(geoSuccess, geoError, {timeout:5000, maximumAge:0,enableHighAccuracy : true});
+	}
+
+	function geoSuccess(position) {
+		$rootScope.currentLatitude = position.coords.latitude;
+		$rootScope.currentLongitude = position.coords.longitude;
+		$rootScope.$broadcast('acote-handler');
+	}
+
+	function geoError() {
+		$rootScope.geolocationError = true;
+	}
+
+	if (geoPosition.init()) {
+	   $rootScope.getPosition();
 	}
 
 	$templateCache.removeAll();
@@ -104,6 +130,7 @@ ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $l
 		$rootScope.$storage.images = new Array();
 	if( $rootScope.$storage.imagesID == null)
 		$rootScope.$storage.imagesID = new Array();
+
 
 	$rootScope.$storage.listeEtapesLoaded = new Array();
 	$rootScope.allEtapesForMap = null;
@@ -207,13 +234,14 @@ ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $l
 		
 
 	$rootScope.getlibelle = function(data){
+		console.log("getlibelle :" +data);
 		if( data == null )
 			return null;
 
-		if( lang == "en" && data.libelleEn != null ){
+		if( $rootScope.lang == "en" && data.libelleEn != null ){
 			return data.libelleEn;
 		}
-		else if( lang == "fr" && data.libelleFr != null ){
+		else if( $rootScope.lang == "fr" && data.libelleFr != null ){
 			return data.libelleFr;
 		}
 		else{
@@ -222,7 +250,8 @@ ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $l
 	}
 
 	$rootScope.replaceN = function(data){
-		return data.replace(/\n/g, "<br />");
+		if( data != null )	
+			return data.replace(/\n/g, "<br />");
 	}
 
 	// Detecter les changements de connexion a internet
@@ -230,6 +259,7 @@ ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $l
 	$rootScope.alertOffline = false;
 	$rootScope.alertAppli = false;
 
+	
 	if( $rootScope.alertAppli == false && version == "site-mobile" ){
 		$rootScope.alertAppli = true;
 		
@@ -256,6 +286,8 @@ ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $l
 
 			});
 		} , 2000 );
+
+	
 
 	}
 
@@ -289,23 +321,15 @@ ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $l
 
 	$rootScope.resizeImageHeight = 350;
 	$(window).on("resize.doResize", function (){
-        $rootScope.resizeImageHeight = Math.round($(window).width()/1.5);
-        $(".resize-image").stop(true,true).height(Math.round($(window).width()/1.5)+"px");
+        $rootScope.resizeImageHeight = Math.round(window.outerWidth/1.5);
+        $(".resize-image").stop(true,true).height(Math.round(window.outerWidth/1.5)+"px");
     });
 
 
-	$rootScope.updateGeoPosition = function(lat,long) {
-		$rootScope.currentLatitude = lat;
-		$rootScope.currentLongitude = long;
-		$rootScope.$broadcast('acote-handler');
-	}
-	$rootScope.geoError = function(){
-		$rootScope.geolocationError = true;
-	}
 
 });
 
-ngapp.filter('unsafe', function($sce) {
+app.filter('unsafe', function($sce) {
     return function(val) {
         return $sce.trustAsHtml(val);
     };

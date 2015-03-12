@@ -141,5 +141,4 @@ function HomeCtrl($scope, $routeParams, $http, $rootScope, $location, $resource,
 	}
 
     
-	
 }

@@ -9,6 +9,7 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 {
 	$rootScope.stopLoadingACote = false;
 	$rootScope.aCoteStartsLoading = false;
+
 	var placesIndex = -1;
 	
 	if( $rootScope.isOnline )
@@ -42,9 +43,10 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 
 	$scope.setupKMLoader = function(id){
 		$timeout( function(){
+			
 			if( $rootScope.currentLongitude || $('#canvasLoaderKM-'+id).length() == 0 )
 				return;
-
+			
 			var cl = new CanvasLoader('canvasLoaderKM-'+id);
 			cl.setColor('#e8e8d9'); // default is '#000000'
 			cl.setShape('spiral'); // default is 'oval'
@@ -117,6 +119,7 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 			return;
 				
 		$rootScope.aCoteStartsLoading = true;
+		
 
 		var url = baseURLWordpress+'/sitra/requeteSitraMultiSelection.php?selectionIds='+selectionIds;
 
@@ -177,6 +180,7 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 
 
     $scope.calculateDistance = function(response, statuts){
+    	
 		if(response && statuts == "OK") {
 			$scope.error = false;
 			$scope.listEtapesProches[placesIndex].km = response.rows[0].elements[0].distance;

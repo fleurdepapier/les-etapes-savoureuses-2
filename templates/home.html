@@ -7,18 +7,41 @@
 			
 			<ng-include src="'templates/header.html'"></ng-include>
 
+			<div class="page-acotedemoi" ng-show="etapesPageName == 'carte' && typeSelection != null && map != null && selectionsDatas != null">
+				<div ng-click="toggleFiltresCarte()" class="bt-infos bt-filtre"></div>
+				<div ng-click="toggleFiltresCarte()" class="cover" ng-class="{'close': displayFiltresCarte==false}" ></div>
+
+				<div class="infos" ng-class="{'ng-show': displayFiltresCarte==true}"  >
+					
+					<p>{{getTrad('recherche_acote')}}</p>
+					<div class="liste_choice_ctn">
+							
+						<label ng-repeat="selection in typeSelection" ng-class="{'not_selected':selectionsDatas[selection.selection_id].selected == false, 'selected':selectionsDatas[selection.selection_id].selected == true}" for="select-{{selection.slug}}" style="background-color:{{selectionsDatas[selection.selection_id].color}};border-color:{{selectionsDatas[selection.selection_id].color}};color:{{selectionsDatas[selection.selection_id].color}};">
+							<input ng-change="changeSelectionCarte()" type="checkbox" id="select-{{selection.slug}}" ng-model="selectionsDatas[selection.selection_id].selected" />
+							{{selection.name}}
+						</label>
+
+						
+					</div>
+				</div>
+			</div>
+
 			<div class="page-acotedemoi" ng-show="etapesPageName == 'acotedemoi' && typeSelection != null && selectionsDatas != null">
 				<div ng-click="toggleFiltres()" class="bt-infos bt-filtre"></div>
-				<div ng-click="toggleFiltres()" class="cover" ng-class="{'open': displayFiltres==true}" ></div>
+				<div ng-click="toggleFiltres()" class="cover" ng-class="{'close': displayFiltres==false}" ></div>
 
 				<div class="infos" ng-class="{'ng-show': displayFiltres==true}"  >
 					
 					<p>{{getTrad('recherche_acote')}}</p>
-					<ul>
-						<li ng-repeat="selection in typeSelection">
-							<input type="checkbox" id="select-{{selection.slug}}" ng-model="selectionsDatas[selection.selection_id].selected" /><label for="select-{{selection.slug}}">{{selection.name}}</label>
-						</li>
-					</ul>
+					<div class="liste_choice_ctn">
+							
+						<label ng-repeat="selection in typeSelection" ng-class="{'not_selected':selectionsDatas[selection.selection_id].selected == false, 'selected':selectionsDatas[selection.selection_id].selected == true}" for="select-{{selection.slug}}" style="background-color:{{selectionsDatas[selection.selection_id].color}};border-color:{{selectionsDatas[selection.selection_id].color}};color:{{selectionsDatas[selection.selection_id].color}};">
+							<input type="checkbox" id="select-{{selection.slug}}" ng-model="selectionsDatas[selection.selection_id].selected" />
+							{{selection.name}}
+						</label>
+
+						
+					</div>
 				</div>
 			</div>
 			

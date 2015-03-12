@@ -7,11 +7,22 @@ appControllers.controller('CarteCtrl', CarteCtrl);
 function CarteCtrl($scope, $rootScope, $http, $location, $timeout)
 {
 	$rootScope.stopLoadingACote = true;
+	
 	$scope.markerRollOver = -1;
 	$scope.scrollPos = 0;
 
 	$rootScope.$broadcast('rebuild:me');
 	$rootScope.etapesPageName = "carte";
+
+	$rootScope.displayFiltresCarte = false;
+	$rootScope.toggleFiltresCarte = function(){
+		
+		if( $rootScope.displayFiltresCarte )
+			$rootScope.displayFiltresCarte = false;
+		else 
+			$rootScope.displayFiltresCarte = true;
+
+	};
 
 	// Functions
 	$rootScope.randomizeArray = function(array){
@@ -24,14 +35,38 @@ function CarteCtrl($scope, $rootScope, $http, $location, $timeout)
 	    return array;
 	}
 
-	$scope.setupMap = function(map){
+	$rootScope.changeSelectionCarte = function(){
+		console.log( $rootScope.map , $scope.markerCluster );
+		if( $rootScope.map == null || $scope.markerCluster == null )
+			return;
 
-		if( map != null && $scope.listeEtapes != null )//&& $scope.allCatMarkers == null )
+		$scope.markerCluster.clearMarkers();
+
+		for( var i = 0 ; i < $scope.allCatMarkers.length ; i++ )
+		{
+			console.log($scope.allCatMarkers[i]);
+			if( $scope.selectionsDatas[$scope.allCatMarkers[i].idSelection].selected == true ){
+				$scope.allCatMarkers[i].setMap($scope.map);
+				$scope.markerCluster.addMarker($scope.allCatMarkers[i]);
+			}
+			else{
+				$scope.allCatMarkers[i].setMap(null);
+				$scope.markerCluster.removeMarker($scope.allCatMarkers[i]);
+			}
+		}
+
+		$scope.markerCluster.repaint();
+
+	}
+
+	$scope.setupMap = function(map){
+		if( map != null && $scope.listeEtapes != null && $scope.allCatMarkers == null )
 		{
 			var latlngbounds = new google.maps.LatLngBounds();
 			$scope.allCatMarkers = [];
 
 			var svgPin = 'M0.001,0c0,0,44.045-55.22,56.948-97.554c2.039-5.699,3.236-11.795,3.461-18.136c0.036-0.734,0.055-1.459,0.055-2.176 c0.002-33.339-27.071-60.368-60.464-60.368c-33.395,0-60.466,27.029-60.466,60.368c0,0.714,0.021,1.442,0.053,2.176 c0.227,6.341,1.425,12.432,3.462,18.13C-44.051-55.225,0.001,0,0.001,0z';
+			$rootScope.map = map;
 
 			for( var i=0 ; i<$scope.listeEtapes.length ; i++)
 			{
@@ -60,6 +95,7 @@ function CarteCtrl($scope, $rootScope, $http, $location, $timeout)
 						icon: customPin, // $rootScope.baseURL_IMG+"img/MapPin.png",
 						data : $scope.listeEtapes[i],
 						id: $scope.listeEtapes[i].id,
+						idSelection: $scope.listeEtapes[i].idSelection,
 						liName: "li-"+i
 					});
 		        	var lat = $scope.listeEtapes[i].localisation.geolocalisation.geoJson.coordinates[1];
@@ -67,7 +103,7 @@ function CarteCtrl($scope, $rootScope, $http, $location, $timeout)
 		        	var loc = new google.maps.LatLng(lat, lng);
 
 		       	 	marker.setPosition(loc);
-		        	marker.setMap(map);
+		        	marker.setMap($rootScope.map);
 
 		        	$scope.allCatMarkers.push(marker);
 
@@ -83,7 +119,7 @@ function CarteCtrl($scope, $rootScope, $http, $location, $timeout)
 		        	latlngbounds.extend(loc);
 				}
 			}
-			var markerCluster = new MarkerClusterer(map, $scope.allCatMarkers);
+			$scope.markerCluster = new MarkerClusterer($scope.map, $scope.allCatMarkers);
 
 			if( $rootScope.currentLatitude != null && $rootScope.currentLongitude != null ){
 				
@@ -104,13 +140,13 @@ function CarteCtrl($scope, $rootScope, $http, $location, $timeout)
 
 				var loc = new google.maps.LatLng($rootScope.currentLatitude, $rootScope.currentLongitude);
 				marker.setPosition(loc);
-				marker.setMap(map);
+				marker.setMap($rootScope.map);
 
 				//latlngbounds.extend(loc);
 			}
 
-			map.setCenter(latlngbounds.getCenter());
-			map.fitBounds(latlngbounds); 
+			$rootScope.map.setCenter(latlngbounds.getCenter());
+			$rootScope.map.fitBounds(latlngbounds); 
 
 		}		
 	}
@@ -142,8 +178,10 @@ function CarteCtrl($scope, $rootScope, $http, $location, $timeout)
 
 
 	// Sinon requete sitra :	
+
 	var selectionIds = "";
 	$rootScope.selectionsDatas = new Array();
+	$rootScope.typeSelection = new Array();
 	for( var i=0 ; i< $rootScope.themes.length ; i++ )
 	{
 		if( $rootScope.themes[i].in_all_etapes == true ){
@@ -153,7 +191,9 @@ function CarteCtrl($scope, $rootScope, $http, $location, $timeout)
 			datas.color = $rootScope.themes[i].category_color;
 			datas.name = $rootScope.themes[i].category_short_name;
 			datas.slug = $rootScope.themes[i].category_slug;
+			datas.selected = true;
 			$rootScope.selectionsDatas[datas.selection_id] = datas;
+			$rootScope.typeSelection.push(datas);
 		}
 	}
 	selectionIds = selectionIds.substring(0, selectionIds.length-1);
@@ -162,7 +202,9 @@ function CarteCtrl($scope, $rootScope, $http, $location, $timeout)
 
 	$rootScope.$on('mapInitialized', function(event, map) {
 		$rootScope.map = map; 
-		$scope.setupMap(map);
+		var search = $location.search();
+		if( search != null && search.c != null && search.c == "all" )
+			$scope.setupMap(map);
 	});
 	
 
@@ -190,13 +232,12 @@ function CarteCtrl($scope, $rootScope, $http, $location, $timeout)
 
 		}
 		else{
-			
 			$scope.listeEtapes = $rootScope.allEtapesForMap;
 			$scope.setupMap($rootScope.map);
 		}
 		
 	
-	} , 1000 );
+	} , 500 );
 
 	
 }

@@ -19,7 +19,8 @@
 					<span class="titre">{{soustheme.sub_cat_name}}</span>
 					<span class="nb-etapes" ng-show="isOnline" >
 						<span class="chiffre">{{soustheme.numFound}}</span>
-						<span class="label">{{getTrad('etapes')}}</span>
+						<span ng-if="soustheme.numFound > 1" class="label">{{getTrad('etapes')}}</span>
+						<span ng-if="soustheme.numFound <= 1" class="label">{{getTrad('etape')}}</span>
 					</span>
 				</li>
 			</ul>

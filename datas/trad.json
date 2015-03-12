@@ -8,8 +8,8 @@
 		"en" : "WHAT WILL BE"
 	},
 	"titre_accueil_2" : {
-		"fr" : "VOTRE PROCHAINE ÉTAPE",
-		"en" : "YOUR NEXT STOP"
+		"fr" : "VOTRE PROCHAINE ÉTAPE ?",
+		"en" : "YOUR NEXT STOP ?"
 	},
 	"theme_nav" : {
 		"fr" : "Thèmes",
@@ -98,6 +98,10 @@
 	"etapes" : {
 		"fr" : "ÉTAPES",
 		"en" : "STOPS"
+	},
+	"etape" : {
+		"fr" : "ÉTAPE",
+		"en" : "STOP"
 	},
 	"lire_suite" : {
 		"fr" : "LIRE LA SUITE",

@@ -50,7 +50,7 @@ function EtapeCtrl($scope, $rootScope, $routeParams, $http, $timeout)
 	
 
 	$scope.initFicheData = function(){
-		$scope.headerRetourTitle = $rootScope.getlibelle($scope.fiche.nom);
+		$rootScope.headerRetourTitle = $rootScope.getlibelle($scope.fiche.nom);
 
 
 		if( $scope.fiche.localisation.geolocalisation.geoJson != null ){
@@ -91,6 +91,9 @@ function EtapeCtrl($scope, $rootScope, $routeParams, $http, $timeout)
 		//if( $scope.map != null )
 		//	$scope.setupMap($scope.map);
 	}
+
+
+	
 
 	$scope.hasDisctinctionLogo = function(distinction){
 		/*if( distinction.id == 2968 || distinction.id == 2969 )

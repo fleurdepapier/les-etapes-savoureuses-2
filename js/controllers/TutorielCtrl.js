@@ -12,8 +12,8 @@ function TutorielCtrl($scope, $rootScope, $location, $resource, $timeout)
 	$scope.currentSlide = 0;
 	$scope.slideAnim = 'swipe-left';
 	$scope.nbSlides = 0;
-
 	$scope.tutoHeight = false;
+
 	
 	if( $rootScope.isOnline == true ){
 		var WPAPI = $resource(baseURLWordpress+'?wpapi=get_posts&dev=1&type=page&id=7', null, {'query' : {method:'GET', params:{isArray:false}} });
