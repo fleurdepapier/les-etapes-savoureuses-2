@@ -40,7 +40,7 @@ function ActualitesCtrl($scope, $rootScope, $resource, $timeout, $location)
 
 	$scope.goToActu = function(link)
 	{
-		console.log(link);
+		//console.log(link);
 		$location.path(link);
 	}
 }

@@ -36,7 +36,7 @@ function CarteCtrl($scope, $rootScope, $http, $location, $timeout)
 	}
 
 	$rootScope.changeSelectionCarte = function(){
-		console.log( $rootScope.map , $scope.markerCluster );
+		//console.log( $rootScope.map , $scope.markerCluster );
 		if( $rootScope.map == null || $scope.markerCluster == null )
 			return;
 
@@ -44,7 +44,7 @@ function CarteCtrl($scope, $rootScope, $http, $location, $timeout)
 
 		for( var i = 0 ; i < $scope.allCatMarkers.length ; i++ )
 		{
-			console.log($scope.allCatMarkers[i]);
+			//console.log($scope.allCatMarkers[i]);
 			if( $scope.selectionsDatas[$scope.allCatMarkers[i].idSelection].selected == true ){
 				$scope.allCatMarkers[i].setMap($scope.map);
 				$scope.markerCluster.addMarker($scope.allCatMarkers[i]);

@@ -78,7 +78,7 @@ ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $l
 		$rootScope.lang = "fr";
 
 	$http.get('datas/trad.json').success(function(datas){
-		console.log(datas);
+		////console.log(datas);
 		$rootScope.trads = datas;
 		$rootScope.loadingTrad = $rootScope.getTrad("loading");
 	});
@@ -163,7 +163,7 @@ ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $l
 		{
 			var currentName = $rootScope.currentCtrl;
 			var nextName = current.$$route.controller;
-			console.log(currentName, nextName);
+			//console.log(currentName, nextName);
 			if( currentName == null )
 			{
 				$rootScope.animSide = "no-anim";
@@ -234,7 +234,7 @@ ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $l
 		
 
 	$rootScope.getlibelle = function(data){
-		console.log("getlibelle :" +data);
+		////console.log("getlibelle :" +data);
 		if( data == null )
 			return null;
 

@@ -185,7 +185,7 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 			$scope.error = false;
 			$scope.listEtapesProches[placesIndex].km = response.rows[0].elements[0].distance;
 			$scope.listEtapesProches[placesIndex].km.valueRounded = Math.round($scope.listEtapesProches[placesIndex].km.value/1000);
-			//console.log( $scope.listEtapesProches[placesIndex] );
+			////console.log( $scope.listEtapesProches[placesIndex] );
 
 			$scope.addNouvelleEtape($scope.listEtapesProches[placesIndex]);
 		}

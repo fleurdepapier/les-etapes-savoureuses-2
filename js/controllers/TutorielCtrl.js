@@ -20,7 +20,7 @@ function TutorielCtrl($scope, $rootScope, $location, $resource, $timeout)
 		WPAPI.query( null, function(datas){
 			$scope.dataPage = datas.posts[0].custom_fields;
 			$scope.nbSlides = $scope.dataPage.slide_home.length - 1;
-			console.log($scope.dataPage);
+			//console.log($scope.dataPage);
 			$rootScope.$storage.tutoriel = $scope.dataPage;
 
 			$scope.setTutoHeight();
@@ -54,7 +54,7 @@ function TutorielCtrl($scope, $rootScope, $location, $resource, $timeout)
 	$scope.setTutoHeight = function(){
 		$timeout( function(){
 			$("#tuto-content .block-slide").each(function(){
-				console.log($(this).height());
+				//console.log($(this).height());
 				var height = -Math.round( $(this).height() *.5)-50;
 				$(this).css("margin-top", height+"px");
 			});

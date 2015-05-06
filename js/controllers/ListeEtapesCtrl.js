@@ -23,7 +23,7 @@ function ListeEtapesCtrl($scope, $routeParams, $http, $rootScope, $location, $ti
     };
 
     $scope.setupLoader = function(){
-		console.log('setupLoader ListeEtapesCtrl');
+		//console.log('setupLoader ListeEtapesCtrl');
 		var cl = new CanvasLoader('canvasLoaderListeEtapes');
 		cl.setColor('#FFFFFF'); // default is '#000000'
 		cl.setShape('spiral'); // default is 'oval'
@@ -69,7 +69,7 @@ function ListeEtapesCtrl($scope, $routeParams, $http, $rootScope, $location, $ti
 		if( $rootScope.isOnline == true ){
 			// On lance la requette un peu apres pour que l'animation soit fluide
 			$http.get(url).success(function(response){
-				//console.log(response);
+				////console.log(response);
 				$scope.listeEtapes =  $rootScope.randomizeArray(response.objetsTouristiques);
 				$scope.contentLoading = false;
 

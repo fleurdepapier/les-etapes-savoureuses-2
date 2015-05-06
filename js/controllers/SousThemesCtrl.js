@@ -43,7 +43,7 @@ function SousThemesCtrl($scope, $routeParams, $http, $rootScope, $location, $tim
 	}
 
 	$scope.setupLoader = function(){
-		console.log('setupLoader');
+		//console.log('setupLoader');
 		var cl = new CanvasLoader('contentLoadingSousThemes');
 		cl.setColor('#FFFFFF'); // default is '#000000'
 		cl.setShape('spiral'); // default is 'oval'

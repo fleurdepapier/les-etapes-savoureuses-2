@@ -122,7 +122,7 @@ function HomeCtrl($scope, $routeParams, $http, $rootScope, $location, $resource,
 		        var dataURL = canvas.toDataURL("image/png");
 
 		        $rootScope.$storage.images[index] = dataURL;//.replace(/^data:image\/(png|jpg);base64,/, "");
-		        //console.log($rootScope.$storage.images);
+		        ////console.log($rootScope.$storage.images);
 		        $rootScope.$apply();
 	        }
 

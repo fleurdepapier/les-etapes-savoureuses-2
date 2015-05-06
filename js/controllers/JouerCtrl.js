@@ -21,7 +21,7 @@ function JouerCtrl($scope, $rootScope, $routeParams, $resource, $http, $timeout)
 
 			var WPAPI = $resource(baseURLWordpress+'?wpapi=get_posts&dev=1&type=page&id=11', null, {'query' : {method:'GET', params:{isArray:false}} });
 			WPAPI.query( null, function(datas){
-				console.log( datas);
+				//console.log( datas);
 				$scope.dataPage = datas.posts[0].custom_fields;
 
 				if( $scope.dataPage.id_form != "0" && $scope.dataPage.id_form != "" ){
@@ -55,12 +55,12 @@ function JouerCtrl($scope, $rootScope, $routeParams, $resource, $http, $timeout)
 	}
 
 	$scope.submitForm = function(){
-		console.log("SUBMIT !! ");
+		//console.log("SUBMIT !! ");
 
  		var data = $("form").serialize();
 		var url = baseURLWordpress+"/formulaire-generateur/?id_form=1";
 		/*$http.post(url, data).success(function(response){
-			console.log(response);
+			//console.log(response);
 		})*/
 		
 		$.post( url, data , function( data ) {
