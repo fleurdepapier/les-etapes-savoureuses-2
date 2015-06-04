@@ -35,13 +35,13 @@
 
 
 				<div class="website" ng-if="website != null || facebook != null || twitter != null " >
-					<a href="#" onclick="window.open('{{website}}', '_system');" target="_blank">{{websiteDisplay}}</a>
-					<a ng-if="twitter != null" href="#" onclick="window.open('{{twitter}}', '_system');" target="_blank" class="twitter-link"><span class="twitter-bt"></span></a>
-					<a ng-if="facebook != null" href="#" onclick="window.open('{{facebook}}', '_system');" target="_blank" class="facebook-link"><span class="facebook-bt"></span></a>
+					<a href="{{website}}" target="_blank">{{websiteDisplay}}</a>
+					<a ng-if="twitter != null" href="{{twitter}}" target="_blank" class="twitter-link"><span class="twitter-bt"></span></a>
+					<a ng-if="facebook != null" href="{{facebook}}" target="_blank" class="facebook-link"><span class="facebook-bt"></span></a>
 				</div>
 
 				
-				<a ng-if="lattitude != null && longitude != null" class="complementAccueil itineraire" target="_blank" href="#" onclick="window.open('https://www.google.fr/maps/dir/Ma position/{{lattitude}},{{longitude}}/', '_system');" >{{getTrad('sy_rendre')}}</a>
+				<a ng-if="lattitude != null && longitude != null" class="complementAccueil itineraire" target="_blank" href="https://www.google.fr/maps/dir/Ma position/{{lattitude}},{{longitude}}" >{{getTrad('sy_rendre')}}</a>
 
 				<div ng-if="getlibelle(fiche.presentation.descriptifDetaille) != null" class="endetail">
 					<h2>{{getTrad('detail')}}</h2>
