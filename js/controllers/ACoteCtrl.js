@@ -121,7 +121,7 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 		$rootScope.aCoteStartsLoading = true;
 		
 
-		var url = baseURLWordpress+'/sitra/requeteSitraMultiSelection.php?selectionIds='+selectionIds;
+		var url = baseURLWordpress+'/sitra/requeteSitraMultiSelectionByDistance.php?selectionIds='+selectionIds;
 
 		$http.get(url).success(function(response){
 
@@ -141,12 +141,17 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 
 							response.response[i].objetsTouristiques[j].idSelection = response.response[i].query.selectionIds[0];
 							response.response[i].objetsTouristiques[j].destination = destination;
-							$scope.listEtapesProches.push( response.response[i].objetsTouristiques[j] );
+
+							response.response[i].objetsTouristiques[j].km = -1;
+							response.response[i].objetsTouristiques[j].km.valueRounded = "";
+
+							$rootScope.listEtapeTriee.push( response.response[i].objetsTouristiques[j] );
 							$rootScope.$storage.listeAllEtapes.push( response.response[i].objetsTouristiques[j] );
 						}
 					}
 				}
 			}
+			$rootScope.listEtapeTriee = $rootScope.$storage.listEtapesProches;
 			$scope.calculateDistance(null,null);
 				
 		}).error( function(){
@@ -183,18 +188,18 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
     	
 		if(response && statuts == "OK") {
 			$scope.error = false;
-			$scope.listEtapesProches[placesIndex].km = response.rows[0].elements[0].distance;
-			$scope.listEtapesProches[placesIndex].km.valueRounded = Math.round($scope.listEtapesProches[placesIndex].km.value/1000);
+			$scope.listEtapeTriee[placesIndex].km = response.rows[0].elements[0].distance;
+			$scope.listEtapeTriee[placesIndex].km.valueRounded = Math.round($scope.listEtapesProches[placesIndex].km.value/1000);
 			////console.log( $scope.listEtapesProches[placesIndex] );
 
-			$scope.addNouvelleEtape($scope.listEtapesProches[placesIndex]);
+			$scope.sortTab();
 		}
 
 		placesIndex ++;
 
-		if(placesIndex < $scope.listEtapesProches.length && $rootScope.stopLoadingACote == false ) {
+		if(placesIndex < $scope.listEtapeTriee.length && $rootScope.stopLoadingACote == false ) {
 
-			var destination = $scope.listEtapesProches[placesIndex].destination;
+			var destination = $scope.listEtapeTriee[placesIndex].destination;
 			$scope.origin = new google.maps.LatLng($rootScope.currentLatitude, $rootScope.currentLongitude);
 
 			service.getDistanceMatrix(
@@ -209,10 +214,12 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 		} 
     }
 
-    $scope.addNouvelleEtape = function(etape){
-    	$rootScope.listEtapeTriee.push(etape);
+    $scope.sortTab = function(){
+    	//$rootScope.listEtapeTriee.push(etape);
     	
     	$rootScope.listEtapeTriee.sort( function(a,b){
+    		if( a.km.value == null || a.km.value == -1 )
+    			return 1;
 	    	if( a.km.value < b.km.value )
 	    		return -1;
 	    	else if (a.km.value > b.km.value)
