@@ -122,9 +122,9 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 		
 
 		var url = baseURLWordpress+'sitra/requeteSitraMultiSelectionByDistance.php?selectionIds='+selectionIds;
-
+		alert(url);
 		$http.get(url).success(function(response){
-
+			alert(response);
 			$scope.listEtapesProches = new Array();
 			$rootScope.$storage.listeAllEtapes = new Array();
 
