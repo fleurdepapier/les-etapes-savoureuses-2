@@ -368,6 +368,7 @@ function getMobileOperatingSystem() {
 
 
 function openDeviceBrowser (externalLinkToOpen){	
+	console.log('openDeviceBrowser : '+externalLinkToOpen);
 	window.open(encodeURI(externalLinkToOpen), '_system', 'location=yes');
 }
 
