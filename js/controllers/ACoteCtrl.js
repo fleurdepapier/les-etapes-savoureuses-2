@@ -153,6 +153,7 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 			}
 			$rootScope.listEtapeTriee = $rootScope.$storage.listEtapesProches;
 			$scope.calculateDistance(null,null);
+			$scope.contentLoading = false;
 				
 		}).error( function(){
 			$rootScope.listEtapeTriee = null;
