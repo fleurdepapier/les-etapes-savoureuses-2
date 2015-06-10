@@ -109,9 +109,9 @@ ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $l
 		$rootScope.geolocationError = true;
 	}
 
-	if (geoPosition.init()) {
+	/*if (geoPosition.init()) {
 	   $rootScope.getPosition();
-	}
+	}*/
 
 	$templateCache.removeAll();
 	$rootScope.themes == null;
@@ -368,7 +368,7 @@ function getMobileOperatingSystem() {
 
 
 function openDeviceBrowser (externalLinkToOpen){	
-	window.open(externalLinkToOpen, '_system', 'location=no');
+	window.open(encodeURI(externalLinkToOpen), '_system', 'location=yes');
 }
 
 
