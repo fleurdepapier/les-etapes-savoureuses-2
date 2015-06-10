@@ -239,7 +239,9 @@ section.ng-scope, .page.ng-scope {
   left: 15px;
   width: 22px;
   height: 19px;
-  background-image: url(../img/bt-menu.png);
+  background-image: url(../img/bt-menu@2x.png);
+  background-size: 22px 19px;
+  background-position: center center;
   background-repeat: no-repeat;
   background-position: center center;
 }
@@ -705,7 +707,9 @@ body.right .view.ng-enter {
   width: 100px;
   height: 105px;
   margin-top: 50px;
-  background-image: url(../img/logo-menu.png);
+  background-image: url(../img/logo-menu@2x.png);
+  background-size: 100px 105px;
+  background-position: center center;
   background-repeat: no-repeat;
   margin-bottom: 30px;
 }
