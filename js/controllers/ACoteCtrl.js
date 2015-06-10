@@ -121,7 +121,7 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 		$rootScope.aCoteStartsLoading = true;
 		
 
-		var url = baseURLWordpress+'/sitra/requeteSitraMultiSelectionByDistance.php?selectionIds='+selectionIds;
+		var url = baseURLWordpress+'sitra/requeteSitraMultiSelectionByDistance.php?selectionIds='+selectionIds;
 
 		$http.get(url).success(function(response){
 
@@ -151,7 +151,8 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 					}
 				}
 			}
-			$rootScope.listEtapeTriee = $rootScope.$storage.listEtapesProches;
+			alert($rootScope.listEtapeTriee);
+			//$rootScope.listEtapeTriee = $rootScope.$storage.listEtapesProches;
 			//$scope.calculateDistance(null,null);
 			$scope.contentLoading = false;
 				
