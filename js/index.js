@@ -37,6 +37,8 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         //console.log("onDeviceReady");
+        FastClick.attach(document.body);
+        
         if (geoPosition.init()) {
 		   if( lat != null && long != null )
                 return;
