@@ -4,7 +4,7 @@ var appControllers = angular.module('appControllers', []);
 
 appControllers.controller('EtapeCtrl', EtapeCtrl);
 
-function EtapeCtrl($scope, $rootScope, $routeParams, $http, $timeout)
+function EtapeCtrl($scope, $rootScope, $routeParams, $http, $timeout, $window)
 {
 	var idFiche = $routeParams.idFiche;
 	$scope.noDataForFiche = false;
@@ -112,10 +112,9 @@ function EtapeCtrl($scope, $rootScope, $routeParams, $http, $timeout)
 
 
 	$scope.externalLinks = function(link){
-		var link = $(this).attr("href");
 		console.log('openDeviceBrowser : '+link);
 		alert("openDeviceBrowser : "+link);
-		window.open(encodeURI(link), '_system', 'location=yes');
+		$window.open(encodeURI(link), '_system', 'location=yes');
 		return false;
 	}
 }
