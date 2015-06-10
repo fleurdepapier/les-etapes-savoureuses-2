@@ -327,6 +327,12 @@ ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $l
 
 
 
+	$(".externalLinks").on("click", function(){
+		var link = $(this).attr("href");
+		console.log('openDeviceBrowser : '+link);
+		window.open(encodeURI(link), '_system', 'location=yes');
+		return false;
+	});
 });
 
 app.filter('unsafe', function($sce) {
@@ -366,11 +372,6 @@ function getMobileOperatingSystem() {
   }
 }
 
-
-function openDeviceBrowser (externalLinkToOpen){	
-	console.log('openDeviceBrowser : '+externalLinkToOpen);
-	window.open(encodeURI(externalLinkToOpen), '_system', 'location=yes');
-}
 
 
 
