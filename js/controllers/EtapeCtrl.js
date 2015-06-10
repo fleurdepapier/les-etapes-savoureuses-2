@@ -109,4 +109,13 @@ function EtapeCtrl($scope, $rootScope, $routeParams, $http, $timeout)
 
 		return false;
 	}
+
+
+	$scope.externalLinks = function(link){
+		var link = $(this).attr("href");
+		console.log('openDeviceBrowser : '+link);
+		alert("openDeviceBrowser : "+link);
+		window.open(encodeURI(link), '_system', 'location=yes');
+		return false;
+	}
 }

@@ -327,13 +327,6 @@ ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $l
 
 
 
-	$("a.externalLinks").on("click", function(){
-		var link = $(this).attr("href");
-		console.log('openDeviceBrowser : '+link);
-		alert("openDeviceBrowser : "+link);
-		window.open(encodeURI(link), '_system', 'location=yes');
-		return false;
-	});
 });
 
 app.filter('unsafe', function($sce) {

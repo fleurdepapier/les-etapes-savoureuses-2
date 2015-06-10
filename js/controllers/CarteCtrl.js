@@ -206,7 +206,7 @@ function CarteCtrl($scope, $rootScope, $http, $location, $timeout)
 		$rootScope.map = map; 
 		var search = $location.search();
 		if( search != null && search.c != null && search.c == "all" )
-			$scope.setupMap(map);
+			$scope.setupMap($rootScope.map);
 	});
 	
 
