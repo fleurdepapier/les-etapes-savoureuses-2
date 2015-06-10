@@ -142,8 +142,8 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 							response.response[i].objetsTouristiques[j].idSelection = response.response[i].query.selectionIds[0];
 							response.response[i].objetsTouristiques[j].destination = destination;
 
-							response.response[i].objetsTouristiques[j].km = -1;
-							response.response[i].objetsTouristiques[j].km.valueRounded = "";
+							//response.response[i].objetsTouristiques[j].km = -1;
+							//response.response[i].objetsTouristiques[j].km.valueRounded = "";
 
 							$rootScope.listEtapeTriee.push( response.response[i].objetsTouristiques[j] );
 							$rootScope.$storage.listeAllEtapes.push( response.response[i].objetsTouristiques[j] );
@@ -152,7 +152,7 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 				}
 			}
 			$rootScope.listEtapeTriee = $rootScope.$storage.listEtapesProches;
-			$scope.calculateDistance(null,null);
+			//$scope.calculateDistance(null,null);
 			$scope.contentLoading = false;
 				
 		}).error( function(){
