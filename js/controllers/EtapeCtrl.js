@@ -112,8 +112,6 @@ function EtapeCtrl($scope, $rootScope, $routeParams, $http, $timeout, $window)
 
 
 	$scope.externalLinks = function(link){
-		console.log('openDeviceBrowser : '+link);
-		alert("openDeviceBrowser : "+link);
 		$window.open(encodeURI(link), '_system', 'location=yes');
 		return false;
 	}

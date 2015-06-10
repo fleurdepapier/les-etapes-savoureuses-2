@@ -60,7 +60,7 @@ function CarteCtrl($scope, $rootScope, $http, $location, $timeout)
 	}
 
 	$scope.setupMap = function(map){
-		alert("setupMap");
+
 		if( map != null && $scope.listeEtapes != null && $scope.allCatMarkers == null )
 		{
 			var latlngbounds = new google.maps.LatLngBounds();
@@ -69,7 +69,7 @@ function CarteCtrl($scope, $rootScope, $http, $location, $timeout)
 			var svgPin = 'M0.001,0c0,0,44.045-55.22,56.948-97.554c2.039-5.699,3.236-11.795,3.461-18.136c0.036-0.734,0.055-1.459,0.055-2.176 c0.002-33.339-27.071-60.368-60.464-60.368c-33.395,0-60.466,27.029-60.466,60.368c0,0.714,0.021,1.442,0.053,2.176 c0.227,6.341,1.425,12.432,3.462,18.13C-44.051-55.225,0.001,0,0.001,0z';
 			$rootScope.map = map;
 
-			alert("listeEtapes length = "+$scope.listeEtapes.length);
+
 			for( var i=0 ; i<$scope.listeEtapes.length ; i++)
 			{
 				if( $scope.listeEtapes[i].localisation.geolocalisation.geoJson != null )
@@ -203,7 +203,7 @@ function CarteCtrl($scope, $rootScope, $http, $location, $timeout)
     var url = baseURLWordpress+'/sitra/requeteSitraMultiSelection.php?selectionIds='+selectionIds;
 
 	$rootScope.$on('mapInitialized', function(event, map) {
-		alert("mapInitialized");
+		
 		$rootScope.map = map; 
 		//var search = $location.search();
 		//if( search != null && search.c != null && search.c == "all" )
@@ -214,7 +214,7 @@ function CarteCtrl($scope, $rootScope, $http, $location, $timeout)
 	$timeout( function(){
 
 		if( $rootScope.allEtapesForMap == null ){
-			alert("getEtapes");
+
 			$http.get(url).success(function(response){
 
 				var etapes = new Array();
