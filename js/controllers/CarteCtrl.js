@@ -60,6 +60,7 @@ function CarteCtrl($scope, $rootScope, $http, $location, $timeout)
 	}
 
 	$scope.setupMap = function(map){
+		alert("setupMap");
 		if( map != null && $scope.listeEtapes != null && $scope.allCatMarkers == null )
 		{
 			var latlngbounds = new google.maps.LatLngBounds();
@@ -201,6 +202,7 @@ function CarteCtrl($scope, $rootScope, $http, $location, $timeout)
     var url = baseURLWordpress+'/sitra/requeteSitraMultiSelection.php?selectionIds='+selectionIds;
 
 	$rootScope.$on('mapInitialized', function(event, map) {
+		alert("mapInitialized");
 		$rootScope.map = map; 
 		var search = $location.search();
 		if( search != null && search.c != null && search.c == "all" )
@@ -211,7 +213,7 @@ function CarteCtrl($scope, $rootScope, $http, $location, $timeout)
 	$timeout( function(){
 
 		if( $rootScope.allEtapesForMap == null ){
-
+			alert("getEtapes");
 			$http.get(url).success(function(response){
 
 				var etapes = new Array();
