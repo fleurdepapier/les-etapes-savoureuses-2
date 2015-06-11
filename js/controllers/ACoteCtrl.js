@@ -193,12 +193,14 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 			$scope.error = false;
 			$rootScope.listEtapeTriee[placesIndex].km = response.rows[0].elements[0].distance;
 			$rootScope.listEtapeTriee[placesIndex].km.valueRounded = Math.round($scope.listEtapesProches[placesIndex].km.value/1000);
-			////console.log( $scope.listEtapesProches[placesIndex] );
 
-			$scope.sortTab();
+			console.log($rootScope.listEtapeTriee[placesIndex].km);
+
+			//$scope.sortTab();
 		}
 
 		placesIndex ++;
+		alert("calculateDistance placesIndex "+placesIndex);
 
 		if(placesIndex < $rootScope.listEtapeTriee.length && $rootScope.stopLoadingACote == false ) {
 
