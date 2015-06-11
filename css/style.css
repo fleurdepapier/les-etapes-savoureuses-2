@@ -1181,7 +1181,7 @@ ul.themes-liste li span.icon {
 }
 /* line 762, style.scss */
 ul.themes-liste li span.titre {
-  margin-left: 85px;
+  margin-left: 83px;
   color: #e8e8d9;
   text-transform: uppercase;
   display: inline-block;
@@ -1189,7 +1189,7 @@ ul.themes-liste li span.titre {
   font-family: "GothamRnd-Book", sans-serif;
   font-size: 14px;
   letter-spacing: 0.5px;
-  width: 65%;
+  width: 60%;
   vertical-align: middle;
 }
 /* line 773, style.scss */
