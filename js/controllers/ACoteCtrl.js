@@ -201,7 +201,7 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 		}
 
 		placesIndex ++;
-		trace("calculateDistance pour "+placesIndex);
+		alert("calculateDistance pour "+placesIndex);
 
 		if(placesIndex < $scope.listEtapeTriee.length && $rootScope.stopLoadingACote == false ) {
 
