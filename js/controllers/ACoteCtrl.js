@@ -142,7 +142,7 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 							response.response[i].objetsTouristiques[j].idSelection = response.response[i].query.selectionIds[0];
 							response.response[i].objetsTouristiques[j].destination = destination;
 
-							//response.response[i].objetsTouristiques[j].km = -1;
+							response.response[i].objetsTouristiques[j].km = {value:-1};
 							//response.response[i].objetsTouristiques[j].km.valueRounded = "";
 
 							$rootScope.listEtapeTriee.push( response.response[i].objetsTouristiques[j] );
@@ -196,11 +196,10 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 
 			console.log($rootScope.listEtapeTriee[placesIndex].km);
 
-			//$scope.sortTab();
+			$scope.sortTab();
 		}
 
 		placesIndex ++;
-		alert("calculateDistance placesIndex "+placesIndex);
 
 		if(placesIndex < $rootScope.listEtapeTriee.length && $rootScope.stopLoadingACote == false ) {
 
@@ -221,7 +220,7 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 
     $scope.sortTab = function(){
     	//$rootScope.listEtapeTriee.push(etape);
-    	
+    	console.log("sortTab");
     	$rootScope.listEtapeTriee.sort( function(a,b){
     		if( a.km.value == null || a.km.value == -1 )
     			return 1;
