@@ -22,7 +22,7 @@
 				<span class="nb-etapes">
 					<div ng-hide="isOnline" class="spinner-km loading" ><div ng-attr-id="canvasLoaderKM-{{etape.id}}" ng-init="setupKMLoader(etape.id)" class="loader-wrapper"></div></div>
 					<span ng-show="isOnline" class="chiffre">{{etape.km.valueRounded}}</span>
-					<span ng-show="isOnline" class="label">KM</span>
+					<span ng-show="isOnline" class="label"><span ng-hide="etape.km.valueRounded == null">KM</span></span>
 				</span>
 
 			</li>

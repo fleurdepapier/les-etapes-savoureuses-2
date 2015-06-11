@@ -190,22 +190,19 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
     $scope.calculateDistance = function(response, statuts){
     	
 		if(response && statuts == "OK") {
-			alert(statuts);
-			console.log(response);
 			$scope.error = false;
-			$scope.listEtapeTriee[placesIndex].km = response.rows[0].elements[0].distance;
-			$scope.listEtapeTriee[placesIndex].km.valueRounded = Math.round($scope.listEtapesProches[placesIndex].km.value/1000);
+			$rootScope.listEtapeTriee[placesIndex].km = response.rows[0].elements[0].distance;
+			$rootScope.listEtapeTriee[placesIndex].km.valueRounded = Math.round($scope.listEtapesProches[placesIndex].km.value/1000);
 			////console.log( $scope.listEtapesProches[placesIndex] );
 
 			$scope.sortTab();
 		}
 
 		placesIndex ++;
-		alert("calculateDistance pour "+placesIndex);
 
-		if(placesIndex < $scope.listEtapeTriee.length && $rootScope.stopLoadingACote == false ) {
+		if(placesIndex < $rootScope.listEtapeTriee.length && $rootScope.stopLoadingACote == false ) {
 
-			var destination = $scope.listEtapeTriee[placesIndex].destination;
+			var destination = $rootScope.listEtapeTriee[placesIndex].destination;
 			$scope.origin = new google.maps.LatLng($rootScope.currentLatitude, $rootScope.currentLongitude);
 
 			service.getDistanceMatrix(
