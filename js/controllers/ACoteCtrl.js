@@ -192,7 +192,7 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 		if(response && statuts == "OK") {
 			$scope.error = false;
 			$rootScope.listEtapeTriee[placesIndex].km = response.rows[0].elements[0].distance;
-			$rootScope.listEtapeTriee[placesIndex].km.valueRounded = Math.round($rootScope.listEtapesProches[placesIndex].km.value/1000);
+			$rootScope.listEtapeTriee[placesIndex].km.valueRounded = Math.round($rootScope.listEtapeTriee[placesIndex].km.value/1000);
 
 			console.log($rootScope.listEtapeTriee[placesIndex].km);
 
