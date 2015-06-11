@@ -44,8 +44,9 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 	$scope.setupKMLoader = function(id){
 		$timeout( function(){
 			
-			if( $rootScope.currentLongitude || $('#canvasLoaderKM-'+id).length() == 0 )
-				return;
+			//if( $rootScope.currentLongitude || $('#canvasLoaderKM-'+id).length() == 0 )
+			//	return;
+			console.log("setupKMLoader "+id);
 			
 			var cl = new CanvasLoader('canvasLoaderKM-'+id);
 			cl.setColor('#e8e8d9'); // default is '#000000'
@@ -220,7 +221,7 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 
     $scope.sortTab = function(){
     	//$rootScope.listEtapeTriee.push(etape);
-    	console.log("sortTab");
+
     	$rootScope.listEtapeTriee.sort( function(a,b){
     		if( a.km.value == null || a.km.value == -1 )
     			return 1;
