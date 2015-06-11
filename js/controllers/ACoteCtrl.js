@@ -10,7 +10,7 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 	$rootScope.stopLoadingACote = false;
 	$rootScope.aCoteStartsLoading = false;
 
-	var placesIndex = -1;
+	$rootScope.placesIndex = -1;
 	
 	if( $rootScope.isOnline )
 		var service = new google.maps.DistanceMatrixService();
@@ -46,7 +46,6 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 			
 			//if( $rootScope.currentLongitude || $('#canvasLoaderKM-'+id).length() == 0 )
 			//	return;
-			console.log("setupKMLoader "+id);
 			
 			var cl = new CanvasLoader('canvasLoaderKM-'+id);
 			cl.setColor('#e8e8d9'); // default is '#000000'
@@ -114,6 +113,7 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 
 	$scope.contentLoading = true;
 
+
 	$rootScope.$on('acote-handler', function(event, args){ 
 		
 		if( $rootScope.aCoteStartsLoading == true )
@@ -124,6 +124,8 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
 
 		var url = baseURLWordpress+'sitra/requeteSitraMultiSelectionByDistance.php?selectionIds='+selectionIds+'&lat='+$rootScope.currentLatitude+'&long='+$rootScope.currentLongitude;
 		
+		$rootScope.placesIndex = -1;
+
 		$http.get(url).success(function(response){
 			
 			$scope.listEtapesProches = new Array();
@@ -192,19 +194,19 @@ function ACoteCtrl($scope, $routeParams, $http, $rootScope, $location, $resource
     	
 		if(response && statuts == "OK") {
 			$scope.error = false;
-			$rootScope.listEtapeTriee[placesIndex].km = response.rows[0].elements[0].distance;
-			$rootScope.listEtapeTriee[placesIndex].km.valueRounded = Math.round($rootScope.listEtapeTriee[placesIndex].km.value/1000);
+			$rootScope.listEtapeTriee[$rootScope.placesIndex].km = response.rows[0].elements[0].distance;
+			$rootScope.listEtapeTriee[$rootScope.placesIndex].km.valueRounded = Math.round($rootScope.listEtapeTriee[$rootScope.placesIndex].km.value/1000);
 
-			console.log($rootScope.listEtapeTriee[placesIndex].km);
+			console.log($rootScope.listEtapeTriee[$rootScope.placesIndex].km);
 
 			$scope.sortTab();
 		}
 
-		placesIndex ++;
+		$rootScope.placesIndex ++;
 
-		if(placesIndex < $rootScope.listEtapeTriee.length && $rootScope.stopLoadingACote == false ) {
+		if($rootScope.placesIndex < $rootScope.listEtapeTriee.length && $rootScope.stopLoadingACote == false ) {
 
-			var destination = $rootScope.listEtapeTriee[placesIndex].destination;
+			var destination = $rootScope.listEtapeTriee[$rootScope.placesIndex].destination;
 			$scope.origin = new google.maps.LatLng($rootScope.currentLatitude, $rootScope.currentLongitude);
 
 			service.getDistanceMatrix(
