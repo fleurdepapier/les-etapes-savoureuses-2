@@ -8,7 +8,7 @@
 
 		<div ng-hide="noDataForFiche">
 			
-			<div  ng-if="fiche.imagePrincipale.traductionFichiers[0] != null" class="main-image resize-image" style="background-image:url({{fiche.imagePrincipale.traductionFichiers[0].url}});height:{{resizeImageHeight}}px;">
+			<div class="main-image resize-image" style="background-image:url({{fiche.imagePrincipale.traductionFichiers[0].url}});height:{{resizeImageHeight}}px;">
 			</div>
 			
 			<div ng-if="fiche.imagePrincipale.traductionFichiers[0] == null" class="main-image image-manquante"> </div>
