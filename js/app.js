@@ -321,8 +321,13 @@ ngapp.run(function($window, $rootScope, $location, $resource, $templateCache, $l
 
 	$rootScope.resizeImageHeight = 350;
 	$(window).on("resize.doResize", function (){
-        $rootScope.resizeImageHeight = Math.round(window.outerWidth/1.5);
-        $(".resize-image").stop(true,true).height(Math.round(window.outerWidth/1.5)+"px");
+        var newSize = Math.round(window.outerWidth/1.5);
+        if( newSize == 0 ){
+        	newSize = 350;
+        }
+
+        $rootScope.resizeImageHeight = newSize;
+        $(".resize-image").stop(true,true).height(newSize+"px");
     });
 
 
